@@ -1,0 +1,586 @@
+.TH "Dem_Types.h" 3 "Mon May 10 2021" "DEM" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Dem_Types.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Rte_Dem_Type\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBDemGroupOfDTC_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemPrimaryMemory_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemUserDefinedMemory_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemMirrorMemory_s\fP"
+.br
+.ti -1c
+.RI "union \fBDem_Primary_UserDefined_Memory_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemIndicator_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemClearDTCNotification_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemOperationCycle_Str\fP"
+.br
+.ti -1c
+.RI "struct \fBDemExternalCSDataElementClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemExternalSRDataElementClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemInternalDataElementClass_s\fP"
+.br
+.ti -1c
+.RI "union \fBDemExternal_CS_SR_DataElementClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemExternal_CS_SR_Interal_DataElementClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemDataElementClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemDidClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBNvMBlockDescriptor_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemCallbackOBDDTCStatusChanged_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemGeneralOBD_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemFreezeFrameRecordClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemFreezeFrameRecNumClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemFreezeFrameClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemExtendedDataRecordClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemExtendedDataClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemEventMemorySet_Str\fP"
+.br
+.ti -1c
+.RI "struct \fBDemCallbackDTCStatusChanged_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemClient_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemEnableCondition_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemEnableConditionGroup_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemComponent_str\fP"
+.br
+.ti -1c
+.RI "struct \fBDemCallbackClearEventAllowed_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemDebounceTimeBaseClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemDebounceCounterBasedClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemDebounceMonitorInternal_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemDebounceAlgorithmClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemObdDTC_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemPidDataElement_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemPidClass_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemDTCAttributes_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemDTC_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemStorageCondition_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemCallbackInitMForEFnc_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemCallbackEventDataChanged_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemStorageConditionGroup_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemEventParameter_Str\fP"
+.br
+.ti -1c
+.RI "struct \fBDemRatio_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemDtr_s\fP"
+.br
+.ti -1c
+.RI "struct \fBDemMultiEventTriggering_s\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBE_OK\fP   (\fBStd_ReturnType\fP)0"
+.br
+.ti -1c
+.RI "#define \fBE_NOT_OK\fP   (\fBStd_ReturnType\fP)1"
+.br
+.ti -1c
+.RI "#define \fBDEM_PENDING\fP   (\fBStd_ReturnType\fP)4"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLEAR_BUSY\fP   (\fBStd_ReturnType\fP)5"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLEAR_MEMORY_ERROR\fP   (\fBStd_ReturnType\fP)6"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLEAR_FAILED\fP   (\fBStd_ReturnType\fP)7"
+.br
+.ti -1c
+.RI "#define \fBDEM_WRONG_DTC\fP   (\fBStd_ReturnType\fP)8"
+.br
+.ti -1c
+.RI "#define \fBDEM_WRONG_DTCORIGIN\fP   (\fBStd_ReturnType\fP)9"
+.br
+.ti -1c
+.RI "#define \fBDEM_E_NO_DTC_AVAILABLE\fP   (\fBStd_ReturnType\fP)10"
+.br
+.ti -1c
+.RI "#define \fBDEM_BUSY\fP   (\fBStd_ReturnType\fP)22"
+.br
+.ti -1c
+.RI "#define \fBCLIENT_ONLY_USES_EVENTOVERFLOW_INTERFACE\fP   (\fBDemClientFunctionality_Enum\fP)0"
+.br
+.ti -1c
+.RI "#define \fBCLIENT_USES_FULL_FUNCTIONALITY\fP   (\fBDemClientFunctionality_Enum\fP)1"
+.br
+.ti -1c
+.RI "#define \fBDEM_MONITOR_STATUS_TF\fP   (\fBDem_MonitorStatusType\fP)0"
+.br
+.ti -1c
+.RI "#define \fBDEM_MONITOR_STATUS_TNCTOC\fP   (\fBDem_MonitorStatusType\fP)1"
+.br
+.ti -1c
+.RI "#define \fBDEM_CYCLE_STATE_START\fP   (\fBDem_OperationCycleStateType\fP)1"
+.br
+.ti -1c
+.RI "#define \fBDEM_CYCLE_STATE_END\fP   (\fBDem_OperationCycleStateType\fP)2"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_GROUP_ALL_DTCS\fP   (\fBDem_DTCGroupType\fP)0xffffff"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_STATUS_MASK_ALL\fP   (\fBuint8\fP)0x00"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_KIND_ALL_DTCS\fP   (\fBDem_DTCKindType\fP)0x01"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_KIND_EMISSION_REL_DTCS\fP   (\fBDem_DTCKindType\fP)0x02"
+.br
+.ti -1c
+.RI "#define \fBDEM_J1939DCM_FREEZEFRAME\fP   (\fBDem_FreezeFrameKindType\fP)0U"
+.br
+.ti -1c
+.RI "#define \fBDEM_J1939DCM_SPNS_IN_EXPANDED_FREEZEFRAME\fP   (\fBDem_FreezeFrameKindType\fP)2U"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBuint8\fP \fBboolean\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBStd_ReturnType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint32\fP \fBDem_DTCType\fP"
+.br
+.ti -1c
+.RI "typedef \fBStd_ReturnType\fP(* \fBDem_CallbackDemTriggerOnMonitorStatus_cb\fP) (void)"
+.br
+.ti -1c
+.RI "typedef \fBStd_ReturnType\fP(* \fBDemCallbackDTCStatusChangedFnc_cb\fP) (\fBDem_UdsStatusByteType\fP DTCStatusOld, \fBDem_UdsStatusByteType\fP DTCStatusNew)"
+.br
+.ti -1c
+.RI "typedef \fBStd_ReturnType\fP(* \fBDem_ClearDtcNotification_cb\fP) (\fBuint32\fP DTC, \fBDem_DTCFormatType\fP DTCFormat, \fBDem_DTCOriginType\fP DTCOrigin)"
+.br
+.ti -1c
+.RI "typedef \fBStd_ReturnType\fP(* \fBDem_CallbackClearEventAllowed_cb\fP) (\fBboolean\fP *Allowed)"
+.br
+.ti -1c
+.RI "typedef \fBStd_ReturnType\fP(* \fBDemCallbackEventDataChangedFnc_cb\fP) (\fBDem_EventIdType\fP EventId)"
+.br
+.ti -1c
+.RI "typedef \fBStd_ReturnType\fP(* \fBDemCallbackEventUdsStatusChangedFnc_cb\fP) (\fBDem_UdsStatusByteType\fP EventStatusByteOld, \fBDem_UdsStatusByteType\fP EventStatusByteNew)"
+.br
+.ti -1c
+.RI "typedef \fBStd_ReturnType\fP(* \fBDemCallbackInitMForEFnc_cb\fP) (\fBDem_InitMonitorReasonType\fP InitMonitorReason)"
+.br
+.ti -1c
+.RI "typedef \fBStd_ReturnType\fP(* \fBDemCallbackMonitorStatusChangedFnc_cb\fP) (void)"
+.br
+.ti -1c
+.RI "typedef \fBStd_ReturnType\fP(* \fBDemCallbackGetFDCFnc_cb\fP) (\fBsint8\fP *FaultDetectionCounter)"
+.br
+.ti -1c
+.RI "typedef \fBStd_ReturnType\fP(* \fBDemComponentFailedCallbackFnc_cb\fP) (\fBboolean\fP ComponentFailedStatus)"
+.br
+.ti -1c
+.RI "typedef \fBStd_ReturnType\fP(* \fBDemDataElementReadFnc_cb\fP) (\fBDem_MonitorDataType\fP monitorData0, \fBuint8\fP *Buffer)"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemClearDTCBehavior_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemClearDTCLimitation_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemDataElementDefaultEndianness_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemEventCombinationSupport_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemOBDSupport_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemStatusBitHandlingTestFailedSinceLastClear_Emun\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemSuppressionSupport_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemClientFunctionality_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemTypeOfDTCSupported_Emun\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemClearDtcNotificationTime_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemEventDisplacementStrategy_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemEnvironmentDataCapture_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemEventMemoryEntryStorageTrigger_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemOccurrenceCounterProcessing_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemTypeOfFreezeFrameRecordNumeration_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemExtendedDataRecordTrigger_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemExtendedDataRecordUpdate_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemFreezeFrameRecordTrigger_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemFreezeFrameRecordUpdate_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemOBDEngineType_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemIUMPRDenGroup_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemIUMPRGroup_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemRatioKind_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemDTCSeverity_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemNvStorageStrategy_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemWWHOBDDTCClass_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemDTCSignificance_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemDebounceBehavior_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemDtrUpdateKind_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemEventKind_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemReportBehavior_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemClearEventAllowedBehavior_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemDataElementDataType_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemDataElementEndianness_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemInternalDataElement_Enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_MonitorStatusType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDemEventOBDReadinessGroup_enum\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_OperationCycleStateType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint32\fP \fBDem_DTCGroupType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_DTCKindType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_FreezeFrameKindType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_DTCSeverityType\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBDemOperationCycle_Str\fP \fBDemOperationCycle_s\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBNvMBlockDescriptor_s\fP \fBDemNvRamBlockId_s\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBDemEventMemorySet_Str\fP \fBDemEventMemorySet_s\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBDemComponent_str\fP \fBDemComponent_s\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBDemEventParameter_Str\fP \fBDemEventParameter_s\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CLIENT_ONLY_USES_EVENTOVERFLOW_INTERFACE   (\fBDemClientFunctionality_Enum\fP)0"
+
+.SS "#define CLIENT_USES_FULL_FUNCTIONALITY   (\fBDemClientFunctionality_Enum\fP)1"
+
+.SS "#define DEM_BUSY   (\fBStd_ReturnType\fP)22"
+
+.SS "#define DEM_CLEAR_BUSY   (\fBStd_ReturnType\fP)5"
+
+.SS "#define DEM_CLEAR_FAILED   (\fBStd_ReturnType\fP)7"
+
+.SS "#define DEM_CLEAR_MEMORY_ERROR   (\fBStd_ReturnType\fP)6"
+
+.SS "#define DEM_CYCLE_STATE_END   (\fBDem_OperationCycleStateType\fP)2"
+
+.SS "#define DEM_CYCLE_STATE_START   (\fBDem_OperationCycleStateType\fP)1"
+
+.SS "#define DEM_DTC_GROUP_ALL_DTCS   (\fBDem_DTCGroupType\fP)0xffffff"
+
+.SS "#define DEM_DTC_KIND_ALL_DTCS   (\fBDem_DTCKindType\fP)0x01"
+
+.SS "#define DEM_DTC_KIND_EMISSION_REL_DTCS   (\fBDem_DTCKindType\fP)0x02"
+
+.SS "#define DEM_DTC_STATUS_MASK_ALL   (\fBuint8\fP)0x00"
+
+.SS "#define DEM_E_NO_DTC_AVAILABLE   (\fBStd_ReturnType\fP)10"
+
+.SS "#define DEM_J1939DCM_FREEZEFRAME   (\fBDem_FreezeFrameKindType\fP)0U"
+
+.SS "#define DEM_J1939DCM_SPNS_IN_EXPANDED_FREEZEFRAME   (\fBDem_FreezeFrameKindType\fP)2U"
+
+.SS "#define DEM_MONITOR_STATUS_TF   (\fBDem_MonitorStatusType\fP)0"
+
+.SS "#define DEM_MONITOR_STATUS_TNCTOC   (\fBDem_MonitorStatusType\fP)1"
+
+.SS "#define DEM_PENDING   (\fBStd_ReturnType\fP)4"
+
+.SS "#define DEM_WRONG_DTC   (\fBStd_ReturnType\fP)8"
+
+.SS "#define DEM_WRONG_DTCORIGIN   (\fBStd_ReturnType\fP)9"
+
+.SS "#define E_NOT_OK   (\fBStd_ReturnType\fP)1"
+
+.SS "#define E_OK   (\fBStd_ReturnType\fP)0"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBuint8\fP \fBboolean\fP"
+
+.SS "typedef \fBStd_ReturnType\fP(* Dem_CallbackClearEventAllowed_cb) (\fBboolean\fP *Allowed)"
+
+.SS "typedef \fBStd_ReturnType\fP(* Dem_CallbackDemTriggerOnMonitorStatus_cb) (void)"
+
+.SS "typedef \fBStd_ReturnType\fP(* Dem_ClearDtcNotification_cb) (\fBuint32\fP DTC, \fBDem_DTCFormatType\fP DTCFormat, \fBDem_DTCOriginType\fP DTCOrigin)"
+
+.SS "typedef \fBuint32\fP \fBDem_DTCGroupType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_DTCKindType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_DTCSeverityType\fP"
+
+.SS "typedef \fBuint32\fP \fBDem_DTCType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_FreezeFrameKindType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_MonitorStatusType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_OperationCycleStateType\fP"
+
+.SS "typedef \fBStd_ReturnType\fP(* DemCallbackDTCStatusChangedFnc_cb) (\fBDem_UdsStatusByteType\fP DTCStatusOld, \fBDem_UdsStatusByteType\fP DTCStatusNew)"
+
+.SS "typedef \fBStd_ReturnType\fP(* DemCallbackEventDataChangedFnc_cb) (\fBDem_EventIdType\fP EventId)"
+
+.SS "typedef \fBStd_ReturnType\fP(* DemCallbackEventUdsStatusChangedFnc_cb) (\fBDem_UdsStatusByteType\fP EventStatusByteOld, \fBDem_UdsStatusByteType\fP EventStatusByteNew)"
+
+.SS "typedef \fBStd_ReturnType\fP(* DemCallbackGetFDCFnc_cb) (\fBsint8\fP *FaultDetectionCounter)"
+
+.SS "typedef \fBStd_ReturnType\fP(* DemCallbackInitMForEFnc_cb) (\fBDem_InitMonitorReasonType\fP InitMonitorReason)"
+
+.SS "typedef \fBStd_ReturnType\fP(* DemCallbackMonitorStatusChangedFnc_cb) (void)"
+
+.SS "typedef \fBuint8\fP \fBDemClearDTCBehavior_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemClearDTCLimitation_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemClearDtcNotificationTime_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemClearEventAllowedBehavior_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemClientFunctionality_Enum\fP"
+
+.SS "typedef struct \fBDemComponent_str\fP \fBDemComponent_s\fP"
+
+.SS "typedef \fBStd_ReturnType\fP(* DemComponentFailedCallbackFnc_cb) (\fBboolean\fP ComponentFailedStatus)"
+
+.SS "typedef \fBuint8\fP \fBDemDataElementDataType_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemDataElementDefaultEndianness_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemDataElementEndianness_Enum\fP"
+
+.SS "typedef \fBStd_ReturnType\fP(* DemDataElementReadFnc_cb) (\fBDem_MonitorDataType\fP monitorData0,\fBuint8\fP *Buffer)"
+
+.SS "typedef \fBuint8\fP \fBDemDebounceBehavior_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemDTCSeverity_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemDTCSignificance_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemDtrUpdateKind_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemEnvironmentDataCapture_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemEventCombinationSupport_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemEventDisplacementStrategy_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemEventKind_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemEventMemoryEntryStorageTrigger_Enum\fP"
+
+.SS "typedef struct \fBDemEventMemorySet_Str\fP \fBDemEventMemorySet_s\fP"
+
+.SS "typedef \fBuint8\fP \fBDemEventOBDReadinessGroup_enum\fP"
+
+.SS "typedef struct \fBDemEventParameter_Str\fP \fBDemEventParameter_s\fP"
+
+.SS "typedef \fBuint8\fP \fBDemExtendedDataRecordTrigger_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemExtendedDataRecordUpdate_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemFreezeFrameRecordTrigger_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemFreezeFrameRecordUpdate_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemInternalDataElement_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemIUMPRDenGroup_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemIUMPRGroup_Enum\fP"
+
+.SS "typedef struct \fBNvMBlockDescriptor_s\fP \fBDemNvRamBlockId_s\fP"
+
+.SS "typedef \fBuint8\fP \fBDemNvStorageStrategy_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemOBDEngineType_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemOBDSupport_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemOccurrenceCounterProcessing_Enum\fP"
+
+.SS "typedef struct \fBDemOperationCycle_Str\fP \fBDemOperationCycle_s\fP"
+
+.SS "typedef \fBuint8\fP \fBDemRatioKind_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemReportBehavior_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemStatusBitHandlingTestFailedSinceLastClear_Emun\fP"
+
+.SS "typedef \fBuint8\fP \fBDemSuppressionSupport_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemTypeOfDTCSupported_Emun\fP"
+
+.SS "typedef \fBuint8\fP \fBDemTypeOfFreezeFrameRecordNumeration_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBDemWWHOBDDTCClass_Enum\fP"
+
+.SS "typedef \fBuint8\fP \fBStd_ReturnType\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DEM from the source code\&.

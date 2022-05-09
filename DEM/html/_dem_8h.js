@@ -1,0 +1,26 @@
+var _dem_8h =
+[
+    [ "Dem_ConfigType", "struct_dem___config_type.html", "struct_dem___config_type" ],
+    [ "DEM_ACTIVE", "_dem_8h.html#af728eeaff403d7fa69260ff96c9e2328", null ],
+    [ "DEM_MAX_SIZE_EXT_DATA", "_dem_8h.html#a748aabb8cf6cb68f4466ca04d9eba197", null ],
+    [ "Dem_ClearDTC", "_dem_8h.html#aa5e3ffb5d166420064c4ff876a20f5b8", null ],
+    [ "Dem_ClearPrestoredFreezeFrame", "_dem_8h.html#a743446018077eabc7c11db41bb3ef2c8", null ],
+    [ "Dem_DisableDTCSetting", "_dem_8h.html#ae59f005b3fad22abdc3aa0153cc16f71", null ],
+    [ "Dem_GetDTCOfEvent", "_dem_8h.html#abf22e1e4987d8fa3bbe5f7db7e086219", null ],
+    [ "Dem_GetDTCStatusAvailabilityMask", "_dem_8h.html#ab88aa163dc7dcc52a50c5ab808fc47bc", null ],
+    [ "Dem_GetDTCSuppression", "_dem_8h.html#aa4c81d4d6fb3eedf04415d8d1d07b881", null ],
+    [ "Dem_GetEventUdsStatus", "_dem_8h.html#a1bcea7f6f11a70698d0e6fc91d8df320", null ],
+    [ "Dem_GetFaultDetectionCounter", "_dem_8h.html#a392ce58b4caf850baab279c1a1cd4fd1", null ],
+    [ "Dem_GetStatusOfDTC", "_dem_8h.html#a56007f91014439d6884e57f04d485631", null ],
+    [ "Dem_Init", "_dem_8h.html#a3d9dcf87a9b74b38c16963dd43312cc6", null ],
+    [ "Dem_MainFunction", "_dem_8h.html#a694b870270cf1147fb60f88d2c68f493", null ],
+    [ "Dem_PreInit", "_dem_8h.html#abb9937b10e0ad412c16014b0efdcce44", null ],
+    [ "Dem_ResetEventDebounceStatus", "_dem_8h.html#a2b27c9f3d992cbf1fb6373f0602302c7", null ],
+    [ "Dem_ResetEventStatus", "_dem_8h.html#a7448a856f9dc4cd3490767c641259322", null ],
+    [ "Dem_SelectDTC", "_dem_8h.html#a5f4b5ad402f1b79ebe9159d3a8d7db0e", null ],
+    [ "Dem_SetEnableCondition", "_dem_8h.html#a9279256c830138b6067364e072b2d8a0", null ],
+    [ "Dem_SetEventAvailable", "_dem_8h.html#a77d4e07c0715c9efea37a69bc8686d80", null ],
+    [ "Dem_SetEventStatus", "_dem_8h.html#af5569ba92c3d727f39ab0b831da5877d", null ],
+    [ "Dem_SetOperationCycleState", "_dem_8h.html#aa5603342e350e35f9889e432b2098959", null ],
+    [ "Dem_Shutdown", "_dem_8h.html#a70eb6190c055fffd93eb92eb93505d59", null ]
+];

@@ -1,0 +1,41 @@
+digraph "DemDTC_s"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="DemDTC_s",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemObdDTCRef_ptr" ,fontname="Helvetica"];
+  Node2 [label="DemObdDTC_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_obd_d_t_c__s.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemDTCAttributesRef_ptr" ,fontname="Helvetica"];
+  Node3 [label="DemDTCAttributes_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_d_t_c_attributes__s.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemFreezeFrameClassRef\l_ptr\nDemWWHOBDFreezeFrameClass\lRef_ptr" ,fontname="Helvetica"];
+  Node4 [label="DemFreezeFrameClass_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_freeze_frame_class__s.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemDidClassRef_ptr" ,fontname="Helvetica"];
+  Node5 [label="DemDidClass_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_did_class__s.html",tooltip=" "];
+  Node6 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemMemoryDestinationRef_ptr" ,fontname="Helvetica"];
+  Node6 [label="Dem_Primary_UserDefined\l_Memory_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$union_dem___primary___user_defined___memory__s.html",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemPrimaryMemory" ,fontname="Helvetica"];
+  Node7 [label="DemPrimaryMemory_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_primary_memory__s.html",tooltip=" "];
+  Node8 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemUserDefinedMemory" ,fontname="Helvetica"];
+  Node8 [label="DemUserDefinedMemory_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_user_defined_memory__s.html",tooltip=" "];
+  Node9 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemFreezeFrameRecNumClass\lRef_ptr" ,fontname="Helvetica"];
+  Node9 [label="DemFreezeFrameRecNumClass_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_freeze_frame_rec_num_class__s.html",tooltip=" "];
+  Node10 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemFreezeFrameRecordClass\lRef_ptr" ,fontname="Helvetica"];
+  Node10 [label="DemFreezeFrameRecordClass_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_freeze_frame_record_class__s.html",tooltip=" "];
+  Node11 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemExtendedDataClassRef_ptr" ,fontname="Helvetica"];
+  Node11 [label="DemExtendedDataClass_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_extended_data_class__s.html",tooltip=" "];
+  Node12 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemExtendedDataRecordClass\lRef_ptr" ,fontname="Helvetica"];
+  Node12 [label="DemExtendedDataRecordClass_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_extended_data_record_class__s.html",tooltip=" "];
+  Node13 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemDataElementClassRef" ,fontname="Helvetica"];
+  Node13 [label="DemDataElementClass_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_data_element_class__s.html",tooltip=" "];
+  Node14 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemExternalSRDataElement\lClass" ,fontname="Helvetica"];
+  Node14 [label="DemExternalSRDataElement\lClass_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_external_s_r_data_element_class__s.html",tooltip=" "];
+  Node15 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemExternalCSDataElement\lClass" ,fontname="Helvetica"];
+  Node15 [label="DemExternalCSDataElement\lClass_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_external_c_s_data_element_class__s.html",tooltip=" "];
+  Node16 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemInternalDataElementClass" ,fontname="Helvetica"];
+  Node16 [label="DemInternalDataElementClass_s",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_internal_data_element_class__s.html",tooltip=" "];
+  Node17 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemAgingCycleRef_ptr" ,fontname="Helvetica"];
+  Node17 [label="DemOperationCycle_Str",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_dem_operation_cycle___str.html",tooltip=" "];
+  Node17 -> Node17 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DemLeadingCycleRef_ptr" ,fontname="Helvetica"];
+}

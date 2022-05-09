@@ -1,0 +1,685 @@
+.TH "Dem.c" 3 "Mon May 10 2021" "DEM" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Dem.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Dem\&.h'\fP
+.br
+\fC#include 'Dem_Cfg\&.h'\fP
+.br
+\fC#include 'Dem_LCfg\&.h'\fP
+.br
+\fC#include 'Dem_Stc\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBEventStatusRecType\fP"
+.br
+.ti -1c
+.RI "struct \fBDisableDtcStorageType\fP"
+.br
+.ti -1c
+.RI "struct \fBEventRecType\fP"
+.br
+.ti -1c
+.RI "struct \fBFreezeFrameRecType\fP"
+.br
+.ti -1c
+.RI "struct \fBExtDataRecType\fP"
+.br
+.ti -1c
+.RI "struct \fBHealingRecType\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMODULE_INTAILIZED\fP   (\fBModuleState\fP)0"
+.br
+.ti -1c
+.RI "#define \fBMODULE_UN_INTAILIZED\fP   (\fBModuleState\fP)1"
+.br
+.ti -1c
+.RI "#define \fBMODULE_PREINTAILIZED\fP   (\fBModuleState\fP)2"
+.br
+.ti -1c
+.RI "#define \fBMODULE_UN_PREINTAILIZED\fP   (\fBModuleState\fP)3"
+.br
+.ti -1c
+.RI "#define \fBDEM_NO_DTC\fP   0"
+.br
+.ti -1c
+.RI "#define \fBSTD_ON\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DEBOUNCE_COUNTER_BASED\fP   (\fBDem_DebounceAlgoNameType\fP)1"
+.br
+.ti -1c
+.RI "#define \fBDEM_DEBOUNCE_MONITORINTERNAL_BASED\fP   (\fBDem_DebounceAlgoNameType\fP)2"
+.br
+.ti -1c
+.RI "#define \fBDEM_DEBOUNCE_TIME_BASED\fP   (\fBDem_DebounceAlgoNameType\fP)3"
+.br
+.ti -1c
+.RI "#define \fBDEM_CONFIRMATION_CNTR_MAX\fP   (\fBuint8\fP)255"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLIENT_ID_INVALID\fP   \-1"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLEARDTC_STATE_IDLE\fP   0U"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLEARDTC_STATE_PROCESSING_RAM\fP   1U"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLEARDTC_STATE_PROCESSING_NVRAM\fP   2U"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLEARDTC_STATE_FAILED\fP   3U"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLEARDTC_STATE_FINISHED\fP   4U"
+.br
+.ti -1c
+.RI "#define \fBDemMaxNumberEventEntryPrimary\fP   5"
+.br
+.ti -1c
+.RI "#define \fBDEM_BSW_ERROR_BUFFER_SIZE\fP   \fBDEMBSWERRORBUFFERSIZE\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBuint8\fP \fBModuleState\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_DebounceAlgoNameType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint16\fP \fBChecksumType\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_ResetEventDebounceStatus\fP (\fBDem_EventIdType\fP EventId, \fBDem_DebounceResetStatusType\fP DebounceResetStatus)"
+.br
+.ti -1c
+.RI "\fBsint8\fP \fBMAX\fP (\fBsint8\fP num1, \fBsint8\fP num2)"
+.br
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_ClearPrestoredFreezeFrame\fP (\fBDem_EventIdType\fP EventId)"
+.br
+.RI "\fBDem_ClearPrestoredFreezeFrame\fP Clears a prestored freeze frame of a specific event\&. This API can only be used through the RTE and therefore no declaration is exported via \fBDem\&.h\fP\&. "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_SetEventStatus\fP (\fBDem_EventIdType\fP EventId, \fBDem_EventStatusType\fP EventStatus)"
+.br
+.RI "\fBDem_SetEventStatus\fP Called by SW-Cs or BSW modules to report monitor status information to the Dem\&. BSW modules calling Dem_SetEventStatus can safely ignore the return value\&. "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_ResetEventStatus\fP (\fBDem_EventIdType\fP EventId)"
+.br
+.RI "\fBDem_ResetEventStatus\fP Resets the event failed status\&. This API can only be used through the RTE and therefore no declaration is exported via \fBDem\&.h\fP\&. "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_GetStatusOfDTC\fP (\fBuint8\fP ClientId, \fBuint8\fP *DTCStatus)"
+.br
+.RI "\fBDem_GetStatusOfDTC\fP Gets the status of a DTC\&. "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_GetEventUdsStatus\fP (\fBDem_EventIdType\fP EventId, \fBDem_UdsStatusByteType\fP *UDSStatusByte)"
+.br
+.RI "\fBDem_GetEventUdsStatus\fP Gets the current UDS status byte assigned to the DTC for the event "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_GetDTCOfEvent\fP (\fBDem_EventIdType\fP EventId, \fBDem_DTCFormatType\fP DTCFormat, \fBuint32\fP *DTCOfEvent)"
+.br
+.RI "\fBDem_GetDTCOfEvent\fP Gets the DTC of an event\&. "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_SetEnableCondition\fP (\fBuint8\fP EnableConditionID, \fBboolean\fP ConditionFulfilled)"
+.br
+.RI "\fBDem_SetEnableCondition\fP Sets an enable condition "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_GetDTCSuppression\fP (\fBuint8\fP ClientId, \fBboolean\fP *SuppressionStatus)"
+.br
+.RI "\fBDem_GetDTCSuppression\fP Returns the suppression status of a specific DTC\&. API Availability: "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_GetFaultDetectionCounter\fP (\fBDem_EventIdType\fP EventId, \fBsint8\fP *FaultDetectionCounter)"
+.br
+.RI "\fBDem_GetFaultDetectionCounter\fP Returns the suppression status of a specific DTC\&. API Availability: "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_ClearDTC\fP (\fBuint8\fP ClientId)"
+.br
+.RI "\fBDem_ClearDTC\fP Returns the suppression status of a specific DTC\&. API Availability: "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_DisableDTCSetting\fP (\fBuint8\fP ClientId)"
+.br
+.RI "\fBDem_DisableDTCS\fP Disables the DTC setting for all DTCs assigned to the DemEventMemorySet of the addressed client\&. "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_SetOperationCycleState\fP (\fBuint8\fP operationCycleId, \fBDem_OperationCycleStateType\fP cycleState)"
+.br
+.RI "\fBDem_SetOperationCycleState\fP Sets an operation cycle state\&. This API can only be used through the RTE and therefore no declaration is exported via \fBDem\&.h\fP\&. The interface has an asynchronous behavior to avoid exceeding of typical timing requirements on APIs if a large number of events has to be processed and during the re-initializations of the related monitors\&. The asynchronous acknowledgements are the related InitMonitorForEvent callbacks\&. "
+.ti -1c
+.RI "void \fBDem_Shutdown\fP (void)"
+.br
+.RI "\fBDem_shutdown\fP Shuts down this module\&.\&. "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_SetEventAvailable\fP (\fBDem_EventIdType\fP EventId, \fBboolean\fP AvailableStatus)"
+.br
+.RI "\fBDem_SetEventAvailable\fP Set the available status of a specific Event\&. "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_GetDTCStatusAvailabilityMask\fP (\fBuint8\fP ClientId, \fBDem_UdsStatusByteType\fP *DTCStatusMask)"
+.br
+.RI "\fBDem_GetDTCStatusAvailabilityMask\fP Gets the DTC Status availability mask "
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBDem_SelectDTC\fP (\fBuint8\fP ClientId, \fBuint32\fP DTC, \fBDem_DTCFormatType\fP DTCFormat, \fBDem_DTCOriginType\fP DTCOrigin)"
+.br
+.RI "\fBDem_SelectDTC\fP Selects a DTC or DTC group as target for further operations\&. "
+.ti -1c
+.RI "void \fBDem_Init\fP (\fBDem_ConfigType\fP *ConfigPtr)"
+.br
+.RI "\fBDem_Init\fP Initializes or reinitializes this module\&. "
+.ti -1c
+.RI "void \fBDem_PreInit\fP (void)"
+.br
+.ti -1c
+.RI "void \fBDem_MainFunction\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBDemEventParameter_s\fP \fBDemEventParameter\fP [\fBDEMEVENTPARAMETER_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemDebounceAlgorithmClass_s\fP \fBDemDebounceAlgorithmClass\fP [5]"
+.br
+.ti -1c
+.RI "\fBDemDebounceCounterBasedClass_s\fP \fBDemDebounceCounterBasedClass\fP [5]"
+.br
+.ti -1c
+.RI "\fBDemClient_s\fP \fBDemClient\fP [\fBDEMCLIENT_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemCallbackEventDataChanged_s\fP \fBDemCallbackEventDataChanged\fP [5]"
+.br
+.ti -1c
+.RI "\fBuint16\fP \fBBlockId\fP"
+.br
+.ti -1c
+.RI "\fBDemCallbackInitMForEFnc_s\fP \fBDemCallbackInitMForE\fP [5]"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBMonitor_Status\fP [\fBMAXNUNBEROFEVENTS\fP]"
+.br
+.ti -1c
+.RI "\fBDemEnableConditionGroup_s\fP \fBDemEnableConditionGroup\fP [\fBDEMENABLECONDITIONGROUP_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBModuleState\fP \fBDem_ModuleState\fP = \fBMODULE_UN_INTAILIZED\fP"
+.br
+.ti -1c
+.RI "\fBDem_MonitorStatusType\fP \fBMonitorStatusBuffer\fP [\fBMAXNUNBEROFEVENTS\fP]"
+.br
+.ti -1c
+.RI "\fBDem_ClearDtcStatusType\fP \fBDem_ClearDtcStatus\fP"
+.br
+.ti -1c
+.RI "\fBEventRecType\fP \fBpriMemEventBuffer\fP [\fBDemMaxNumberEventEntryPrimary\fP]"
+.br
+.ti -1c
+.RI "\fBHealingRecType\fP \fBpriMemAgingBuffer\fP [\fBMAXNUNBEROFEVENTS\fP]"
+.br
+.ti -1c
+.RI "\fBDem_DTCSelectionType\fP \fBDem_DTCSelection\fP [\fBDEMCLIENT_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBExtDataRecType\fP \fBpriMemExtDataBuffer\fP [\fBDEME3TENDEDDATACLASS_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDem_ErrorQueueEntryType\fP \fBDem_ErrorQueue\fP [\fBDEM_BSW_ERROR_BUFFER_SIZE\fP]"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEM_BSW_ERROR_BUFFER_SIZE   \fBDEMBSWERRORBUFFERSIZE\fP"
+Queue holding the errors appeared before \fBDem_Init()\fP, or to be entered or updated in event memory after \fBDem_Init()\fP 
+.SS "#define DEM_CLEARDTC_STATE_FAILED   3U"
+Run state value of an async\&. ClearDtc process: Done with PROCESSING_NVRAM, FAILED 
+.SS "#define DEM_CLEARDTC_STATE_FINISHED   4U"
+Run state value of an async\&. ClearDtc process: Done with PROCESSING_NVRAM, FINISHED 
+.SS "#define DEM_CLEARDTC_STATE_IDLE   0U"
+Run state value of an async\&. ClearDtc process: Not running, IDLE 
+.SS "#define DEM_CLEARDTC_STATE_PROCESSING_NVRAM   2U"
+Run state value of an async\&. ClearDtc process: Running, PROCESSING_NVRAM 
+.SS "#define DEM_CLEARDTC_STATE_PROCESSING_RAM   1U"
+Run state value of an async\&. ClearDtc process: Running, PROCESSING_RAM 
+.SS "#define DEM_CLIENT_ID_INVALID   \-1"
+
+.SS "#define DEM_CONFIRMATION_CNTR_MAX   (\fBuint8\fP)255"
+
+.SS "#define DEM_DEBOUNCE_COUNTER_BASED   (\fBDem_DebounceAlgoNameType\fP)1"
+
+.SS "#define DEM_DEBOUNCE_MONITORINTERNAL_BASED   (\fBDem_DebounceAlgoNameType\fP)2"
+
+.SS "#define DEM_DEBOUNCE_TIME_BASED   (\fBDem_DebounceAlgoNameType\fP)3"
+
+.SS "#define DEM_NO_DTC   0"
+
+.SS "#define DemMaxNumberEventEntryPrimary   5"
+
+.SS "#define MODULE_INTAILIZED   (\fBModuleState\fP)0"
+
+.SS "#define MODULE_PREINTAILIZED   (\fBModuleState\fP)2"
+
+.SS "#define MODULE_UN_INTAILIZED   (\fBModuleState\fP)1"
+
+.SS "#define MODULE_UN_PREINTAILIZED   (\fBModuleState\fP)3"
+
+.SS "#define STD_ON   (1U)"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBuint16\fP \fBChecksumType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_DebounceAlgoNameType\fP"
+
+.SS "typedef \fBuint8\fP \fBModuleState\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBStd_ReturnType\fP Dem_ClearDTC (\fBuint8\fP ClientId)"
+
+.PP
+\fBDem_ClearDTC\fP Returns the suppression status of a specific DTC\&. API Availability: 
+.PP
+\fBParameters\fP
+.RS 4
+\fIClientId\fP Unique client id, assigned to the instance of the calling module 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBE_OK\fP: DTC successfully cleared 
+.PP
+\fBE_NOT_OK\fP: No DTC selected 
+.PP
+\fBDEM_WRONG_DTC\fP: Selected DTC value in selected format does not exist or clearing is restricted by configuration to group of all DTCs only\&. available for the requested event 
+.PP
+\fBDEM_WRONG_DTCORIGIN\fP: Selected DTCOrigin does not exist 
+.PP
+\fBDEM_CLEAR_FAILED\fP: DTC clearing failed 
+.PP
+\fBDEM_CLEAR_BUSY\fP: Another client is currently clearing DTCs\&. The requested operation will not be started and the caller shall try again at a later momen 
+.PP
+\fBDEM_CLEAR_MEMORY_ERROR\fP: An error occurred during erasing a memory location (e\&.g\&. if DemClearDTCBehavior is set to DEM_CLRRESP_ NON-VOLATILE_FINISH and erasing of non-volatile-block failed)\&. 
+.PP
+\fBDEM_PENDING\fP: Clearing the DTCs is currently in progress\&. The caller shall call this function again at a later moment\&. 
+.PP
+\fBDEM_BUSY\fP: A different Dem_SelectDTC dependent operation according to SWS_Dem_01253 of this client is currently in progress\&. 
+.RE
+.PP
+\fBDem_ClSSSSearDTC\fP
+.SS "\fBStd_ReturnType\fP Dem_ClearPrestoredFreezeFrame (\fBDem_EventIdType\fP EventId)"
+
+.PP
+\fBDem_ClearPrestoredFreezeFrame\fP Clears a prestored freeze frame of a specific event\&. This API can only be used through the RTE and therefore no declaration is exported via \fBDem\&.h\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIEventId\fP Identification of an event by assigned EventId 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Std_ReturnType which is OK or Not-Ok 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+.RE
+.PP
+
+.SS "\fBStd_ReturnType\fP Dem_DisableDTCSetting (\fBuint8\fP ClientId)"
+
+.PP
+\fBDem_DisableDTCS\fP Disables the DTC setting for all DTCs assigned to the DemEventMemorySet of the addressed client\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIClientId\fP Unique client id, assigned to the instance of the calling module 
+.br
+\fISuppressionStatus\fP Defines whether the respective DTC is suppressed (TRUE) or enabled (FALSE)\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBE_OK\fP: Returned next filtered element 
+.PP
+\fBDEM_PENDING\fP: The requested operation is currently in progress\&. The caller shall call this function again at a later moment\&. 
+.RE
+.PP
+
+.SS "\fBStd_ReturnType\fP Dem_GetDTCOfEvent (\fBDem_EventIdType\fP EventId, \fBDem_DTCFormatType\fP DTCFormat, \fBuint32\fP * DTCOfEvent)"
+
+.PP
+\fBDem_GetDTCOfEvent\fP Gets the DTC of an event\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIEventId\fP Identification of an event by assigned EventId 
+.br
+\fIDTCFormat\fP Defines the output-format of the requested DTC value 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+E_OK: get of DTC was successful 
+.PP
+E_NOT_OK: the call was not successful 
+.PP
+DEM_E_NO_DTC_AVAILABLE: there is no DTC configured in the requested format 
+.RE
+.PP
+
+.SS "\fBStd_ReturnType\fP Dem_GetDTCStatusAvailabilityMask (\fBuint8\fP ClientId, \fBDem_UdsStatusByteType\fP * DTCStatusMask)"
+
+.PP
+\fBDem_GetDTCStatusAvailabilityMask\fP Gets the DTC Status availability mask 
+.PP
+\fBParameters\fP
+.RS 4
+\fIClientId\fP Unique client id, assigned to the instance of the calling module\&. 
+.br
+\fIDTCStatusMaskDTCStatusMask\fP The value DTCStatusMask indicates the supported DTC status bits from the Dem\&. All supported information is indicated by setting the corresponding status bit to 1\&. See ISO14229-1\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBE_OK\fP: get of DTC status mask was successful 
+.PP
+\fBE_NOT_OK\fP: get of DTC status mask failed 
+.RE
+.PP
+
+.SS "\fBStd_ReturnType\fP Dem_GetDTCSuppression (\fBuint8\fP ClientId, \fBboolean\fP * SuppressionStatus)"
+
+.PP
+\fBDem_GetDTCSuppression\fP Returns the suppression status of a specific DTC\&. API Availability: 
+.PP
+\fBParameters\fP
+.RS 4
+\fIClientId\fP Unique client id, assigned to the instance of the calling module 
+.br
+\fISuppressionStatus\fP Defines whether the respective DTC is suppressed (TRUE) or enabled (FALSE)\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBE_OK\fP: Operation was successful\&. 
+.PP
+\fBE_NOT_OK\fP: Dem_SelectDTC was not called\&. 
+.PP
+\fBDEM_WRONG_DTC\fP: No valid DTC or DTC group selected\&. 
+.PP
+\fBDEM_WRONG_DTCORIGIN\fP: Wrong DTC origin selected\&. 
+.PP
+\fBDEM_PENDING\fP: The requested value is calculated asynchronously and currently not available\&. The caller can retry later\&. 
+.RE
+.PP
+
+.SS "\fBStd_ReturnType\fP Dem_GetEventUdsStatus (\fBDem_EventIdType\fP EventId, \fBDem_UdsStatusByteType\fP * UDSStatusByte)"
+
+.PP
+\fBDem_GetEventUdsStatus\fP Gets the current UDS status byte assigned to the DTC for the event 
+.PP
+\fBParameters\fP
+.RS 4
+\fIEventId\fP Identification of an event by assigned EventId 
+.br
+\fIUDSStatusByte\fP UDS DTC status byte of the requested event (refer to chapter 'Status bit support')\&. If the return value of the function call is E_NOT_OK, this parameter does not contain valid data\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Std_ReturnType which is OK or Not-Ok 
+.RE
+.PP
+
+.SS "\fBStd_ReturnType\fP Dem_GetFaultDetectionCounter (\fBDem_EventIdType\fP EventId, \fBsint8\fP * FaultDetectionCounter)"
+
+.PP
+\fBDem_GetFaultDetectionCounter\fP Returns the suppression status of a specific DTC\&. API Availability: 
+.PP
+\fBParameters\fP
+.RS 4
+\fIEventId\fP Identification of an event by assigned EventId\&. 
+.br
+\fIFaultDetectionCounter\fP This parameter receives the Fault Detection Counter information of the requested EventId\&. If the return value of the function call is other than E_OK this parameter does not contain valid data\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBE_OK\fP: request was successful 
+.PP
+\fBE_NOT_OK\fP: request failed 
+.PP
+\fBDEM_E_NO_FDC_AVAILABLE\fP: there is no fault detection counter available for the requested event 
+.RE
+.PP
+
+.SS "\fBStd_ReturnType\fP Dem_GetStatusOfDTC (\fBuint8\fP ClientId, \fBuint8\fP * DTCStatus)"
+
+.PP
+\fBDem_GetStatusOfDTC\fP Gets the status of a DTC\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIClientId\fP Identification of an event by assigned EventId module\&. 
+.br
+\fIDTCStatus\fP This parameter receives the status information of the requested DTC\&.It follows the format as defined in ISO14229-1 If the return value of the function call is other than DEM_FILTERED_OK this parameter does not contain valid data\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Std_ReturnType which is OK or Not-Ok 
+.RE
+.PP
+
+.SS "void Dem_Init (\fBDem_ConfigType\fP * ConfigPtr)"
+
+.PP
+\fBDem_Init\fP Initializes or reinitializes this module\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIConfigPtr\fP Pointer to the configuration set in VARIANT-POSTBUILD\&. 
+.RE
+.PP
+
+.SS "void Dem_MainFunction (void)"
+
+.SS "void Dem_PreInit (void)"
+
+.SS "\fBStd_ReturnType\fP Dem_ResetEventDebounceStatus (\fBDem_EventIdType\fP EventId, \fBDem_DebounceResetStatusType\fP DebounceResetStatus)"
+
+.SS "\fBStd_ReturnType\fP Dem_ResetEventStatus (\fBDem_EventIdType\fP EventId)"
+
+.PP
+\fBDem_ResetEventStatus\fP Resets the event failed status\&. This API can only be used through the RTE and therefore no declaration is exported via \fBDem\&.h\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIEventId\fP Identification of an event by assigned EventId 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Std_ReturnType which is OK or Not-Ok 
+.RE
+.PP
+
+.SS "\fBStd_ReturnType\fP Dem_SelectDTC (\fBuint8\fP ClientId, \fBuint32\fP DTC, \fBDem_DTCFormatType\fP DTCFormat, \fBDem_DTCOriginType\fP DTCOrigin)"
+
+.PP
+\fBDem_SelectDTC\fP Selects a DTC or DTC group as target for further operations\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIClientId\fP Unique client id, assigned to the instance of the calling module\&. 
+.br
+\fIDTC\fP Defines the DTC in respective format that is selected\&. If the DTC fits to a DTC group number, the DTC group is selected\&. 
+.br
+\fIDTCFormat\fP Defines the input-format of the provided DTC value\&. 
+.br
+\fIDTCOrigin\fP The event memory of the requested DTC or group of DTC\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBE_OK\fP: get of DTC status mask was successful 
+.PP
+\fBE_NOT_OK\fP: get of DTC status mask failed 
+.RE
+.PP
+
+.SS "\fBStd_ReturnType\fP Dem_SetEnableCondition (\fBuint8\fP EnableConditionID, \fBboolean\fP ConditionFulfilled)"
+
+.PP
+\fBDem_SetEnableCondition\fP Sets an enable condition 
+.PP
+\fBParameters\fP
+.RS 4
+\fIEnableConditionID\fP This parameter identifies the enable condition\&. 
+.br
+\fIConditionFulfilled\fP This parameter specifies whether the enable condition assigned to the EnableConditionID is fulfilled(TRUE) or not fulfilled (FALSE)\&. In case the enable condition could be set successfully 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBE_OK\fP: In case the enable condition could be set successfully the API call returns E_OK 
+.PP
+\fBE_NOT_OK\fP: If the setting of the enable condition failed the return value of the function is E_NOT_OK\&. 
+.RE
+.PP
+
+.SS "\fBStd_ReturnType\fP Dem_SetEventAvailable (\fBDem_EventIdType\fP EventId, \fBboolean\fP AvailableStatus)"
+
+.PP
+\fBDem_SetEventAvailable\fP Set the available status of a specific Event\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIEventId\fP Identification of an event by assigned EventId\&. 
+.br
+\fIAvailableStatus\fP This parameter specifies whether the respective Event shall be available (TRUE) or not (FALSE)\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBE_OK\fP: Request to set the availability status was successful\&. 
+.PP
+\fBE_NOT_OK\fP: Request to set the availability status not accepted\&. 
+.RE
+.PP
+
+.SS "\fBStd_ReturnType\fP Dem_SetEventStatus (\fBDem_EventIdType\fP EventId, \fBDem_EventStatusType\fP EventStatus)"
+
+.PP
+\fBDem_SetEventStatus\fP Called by SW-Cs or BSW modules to report monitor status information to the Dem\&. BSW modules calling Dem_SetEventStatus can safely ignore the return value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIEventId\fP Identification of an event by assigned EventId 
+.br
+\fIEventStatus\fP Monitor test result 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Std_ReturnType which is OK or Not-Ok 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+.RE
+.PP
+
+.SS "\fBStd_ReturnType\fP Dem_SetOperationCycleState (\fBuint8\fP operationCycleId, \fBDem_OperationCycleStateType\fP cycleState)"
+
+.PP
+\fBDem_SetOperationCycleState\fP Sets an operation cycle state\&. This API can only be used through the RTE and therefore no declaration is exported via \fBDem\&.h\fP\&. The interface has an asynchronous behavior to avoid exceeding of typical timing requirements on APIs if a large number of events has to be processed and during the re-initializations of the related monitors\&. The asynchronous acknowledgements are the related InitMonitorForEvent callbacks\&. !
+.PP
+\fBParameters\fP
+.RS 4
+\fIoperationCycleId\fP Identification of operation cycle, like power cycle,driving cycle 
+.br
+\fIcycleState\fP New operation cycle state: (re-)start or end 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Std_ReturnType which is OK or Not-Ok 
+.PP
+\fBE_OK\fP: get of DTC status mask was successful //TODO 
+.PP
+\fBE_NOT_OK\fP: get of DTC status mask failed 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+.RE
+.PP
+
+.SS "void Dem_Shutdown (void)"
+
+.PP
+\fBDem_shutdown\fP Shuts down this module\&.\&. 
+.SS "\fBsint8\fP MAX (\fBsint8\fP num1, \fBsint8\fP num2)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBuint16\fP BlockId"
+
+.SS "\fBDem_ClearDtcStatusType\fP Dem_ClearDtcStatus"
+
+.SS "\fBDem_DTCSelectionType\fP Dem_DTCSelection[\fBDEMCLIENT_SIZE\fP]"
+
+.SS "\fBDem_ErrorQueueEntryType\fP Dem_ErrorQueue[\fBDEM_BSW_ERROR_BUFFER_SIZE\fP]"
+
+.SS "\fBModuleState\fP Dem_ModuleState = \fBMODULE_UN_INTAILIZED\fP"
+
+.SS "\fBDemCallbackEventDataChanged_s\fP DemCallbackEventDataChanged[5]"
+
+.SS "\fBDemCallbackInitMForEFnc_s\fP DemCallbackInitMForE[5]"
+
+.SS "\fBDemClient_s\fP DemClient[\fBDEMCLIENT_SIZE\fP]\fC [extern]\fP"
+
+.SS "\fBDemDebounceAlgorithmClass_s\fP DemDebounceAlgorithmClass[5]\fC [extern]\fP"
+
+.SS "\fBDemDebounceCounterBasedClass_s\fP DemDebounceCounterBasedClass[5]\fC [extern]\fP"
+
+.SS "\fBDemEnableConditionGroup_s\fP DemEnableConditionGroup[\fBDEMENABLECONDITIONGROUP_SIZE\fP]\fC [extern]\fP"
+
+.SS "\fBDemEventParameter_s\fP DemEventParameter[\fBDEMEVENTPARAMETER_SIZE\fP]\fC [extern]\fP"
+
+.SS "\fBuint8\fP Monitor_Status[\fBMAXNUNBEROFEVENTS\fP]"
+
+.SS "\fBDem_MonitorStatusType\fP MonitorStatusBuffer[\fBMAXNUNBEROFEVENTS\fP]"
+
+.SS "\fBHealingRecType\fP priMemAgingBuffer[\fBMAXNUNBEROFEVENTS\fP]"
+
+.SS "\fBEventRecType\fP priMemEventBuffer[\fBDemMaxNumberEventEntryPrimary\fP]"
+
+.SS "\fBExtDataRecType\fP priMemExtDataBuffer[\fBDEME3TENDEDDATACLASS_SIZE\fP]"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DEM from the source code\&.

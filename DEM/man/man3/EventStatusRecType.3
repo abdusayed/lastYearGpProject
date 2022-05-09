@@ -1,0 +1,58 @@
+.TH "EventStatusRecType" 3 "Mon May 10 2021" "DEM" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EventStatusRecType
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDem_EventIdType\fP \fBeventId\fP"
+.br
+.ti -1c
+.RI "\fBDemEventParameter_s\fP * \fBEventParamterRef\fP"
+.br
+.ti -1c
+.RI "\fBsint8\fP \fBfaultDetectionCounter\fP"
+.br
+.ti -1c
+.RI "\fBsint8\fP \fBmaxFaultDetectionCounter\fP"
+.br
+.ti -1c
+.RI "\fBsint16\fP \fBoccurrence\fP"
+.br
+.ti -1c
+.RI "\fBboolean\fP \fBerrorStatusChanged\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBconfirmationCounter\fP"
+.br
+.ti -1c
+.RI "\fBDem_UdsStatusByteType\fP \fBeventStatus\fP"
+.br
+.in -1c
+.SH "Field Documentation"
+.PP 
+.SS "\fBuint8\fP confirmationCounter"
+
+.SS "\fBboolean\fP errorStatusChanged"
+
+.SS "\fBDem_EventIdType\fP eventId"
+
+.SS "\fBDemEventParameter_s\fP* EventParamterRef"
+
+.SS "\fBDem_UdsStatusByteType\fP eventStatus"
+
+.SS "\fBsint8\fP faultDetectionCounter"
+
+.SS "\fBsint8\fP maxFaultDetectionCounter"
+
+.SS "\fBsint16\fP occurrence"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DEM from the source code\&.

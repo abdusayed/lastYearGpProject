@@ -1,0 +1,48 @@
+.TH "Dem_ClearDtcStatusType" 3 "Mon May 10 2021" "DEM" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Dem_ClearDtcStatusType
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Dem_Stc\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBDem_EventIdType\fP \fBNextEventId\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBRunState\fP"
+.br
+.RI "Global ClearDTC run state\&. "
+.ti -1c
+.RI "\fBboolean\fP \fBAnyEventModified\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBClientId\fP"
+.br
+.ti -1c
+.RI "\fBStd_ReturnType\fP \fBOperationResult\fP"
+.br
+.in -1c
+.SH "Field Documentation"
+.PP 
+.SS "\fBboolean\fP AnyEventModified"
+Event status/data modified flag 
+.SS "\fBuint8\fP ClientId"
+Unique ClientId of the caller 
+.SS "\fBDem_EventIdType\fP NextEventId"
+next EventId to be cleared 
+.SS "\fBStd_ReturnType\fP OperationResult"
+Result of the clearing operation 
+.SS "\fBuint8\fP RunState"
+
+.PP
+Global ClearDTC run state\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DEM from the source code\&.

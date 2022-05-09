@@ -1,0 +1,1792 @@
+.TH "Dem_LCfg.h" 3 "Mon May 10 2021" "DEM" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Dem_LCfg.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDEMCLIENT_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCLIENT_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKDTCSTATUSCHANGED_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKDTCSTATUSCHANGED_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCLIENT_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCLIENT_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKDTCSTATUSCHANGED_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKDTCSTATUSCHANGED_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEME1TERNALSRDATAELEMENTCLASS_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTERNALSRDATAELEMENTCLASS_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMALTERNATIVEDATAINTERFACE_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMALTERNATIVEDATAINTERFACE_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDATAELEMENTINSTANCE_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDATAELEMENTINSTANCE_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMINTERNALDATAELEMENTCLASS_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMINTERNALDATAELEMENTCLASS_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEME1TERNALCSDATAELEMENTCLASS_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTERNALCSDATAELEMENTCLASS_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDIDCLASS_SIZE\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMGENERALOBD_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMGENERALOBD_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKOBDDTCSTATUSCHANGED_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKOBDDTCSTATUSCHANGED_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKOBDDTCSTATUSCHANGED_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKOBDDTCSTATUSCHANGED_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMENABLECONDITION_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMENABLECONDITION_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMENABLECONDITION_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMENABLECONDITION_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMENABLECONDITIONGROUP_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMENABLECONDITIONGROUP_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMENABLECONDITIONGROUP_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMENABLECONDITIONGROUP_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEVENTMEMORYSET_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEVENTMEMORYSET_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCLEARDTCNOTIFICATION_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCLEARDTCNOTIFICATION_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMINDICATOR_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMINDICATOR_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMMIRRORMEMORY_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMMIRRORMEMORY_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPRIMARYMEMORY_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPRIMARYMEMORY_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMUSERDEFINEDMEMORY_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMUSERDEFINEDMEMORY_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEVENTMEMORYSET_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPRIMARYMEMORY_1_STARTING_INDEX\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPRIMARYMEMORY_1_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEVENTMEMORYSET_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPRIMARYMEMORY_2_STARTING_INDEX\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPRIMARYMEMORY_2_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCLEARDTCNOTIFICATION_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCLEARDTCNOTIFICATION_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMINDICATOR_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMINDICATOR_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMMIRRORMEMORY_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMMIRRORMEMORY_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPRIMARYMEMORY_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPRIMARYMEMORY_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPRIMARYMEMORY_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPRIMARYMEMORY_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMUSERDEFINEDMEMORY_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMUSERDEFINEDMEMORY_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEME3TENDEDDATACLASS_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTENDEDDATACLASS_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTENDEDDATACLASS_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTENDEDDATACLASS_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEME0TENDEDDATARECORDCLASS_SIZE\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEME0TENDEDDATARECORDCLASS_SIZE\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMECLASS_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMECLASS_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMECLASS_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMECLASS_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECNUMCLASS_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECNUMCLASS_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECNUMCLASS_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECNUMCLASS_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECORDCLASS_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECORDCLASS_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECORDCLASS_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECORDCLASS_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECORDCLASS_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECORDCLASS_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECORDCLASS_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECORDCLASS_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMGROUPOFDTC_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMGROUPOFDTC_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMGROUPOFDTC_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMGROUPOFDTC_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMNVRAMBLOCKID_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMNVRAMBLOCKID_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMNVRAMBLOCKID_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMNVRAMBLOCKID_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMOPERATIONCYCLE_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMOPERATIONCYCLE_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMOPERATIONCYCLE_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMOPERATIONCYCLE_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMRATIO_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMRATIO_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMRATIO_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMRATIO_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSTORAGECONDITION_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSTORAGECONDITION_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSTORAGECONDITION_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSTORAGECONDITION_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSTORAGECONDITIONGROUP_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSTORAGECONDITIONGROUP_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSTORAGECONDITIONGROUP_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSTORAGECONDITIONGROUP_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCOMPONENT_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCOMPONENT_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCOMPONENT_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCOMPONENT_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDTC_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDTC_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDTC_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDTC_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDTCATTRIBUTES_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDTCATTRIBUTES_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDTCATTRIBUTES_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDTCATTRIBUTES_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEVENTPARAMETER_SIZE\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEVENTPARAMETER_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKCLEAREVENTALLOWED_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKCLEAREVENTALLOWED_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKEVENTDATACHANGED_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKEVENTDATACHANGED_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKEVENTUDSSTATUSCHANGED_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKEVENTUDSSTATUSCHANGED_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKINITMFORE_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKINITMFORE_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKMONITORSTATUSCHANGED_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCALLBACKMONITORSTATUSCHANGED_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDEBOUNCECOUNTERBASED_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDEBOUNCECOUNTERBASED_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMINDICATORATTRIBUTE_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMINDICATORATTRIBUTE_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMMULTIEVENTTRIGGERING_SIZE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMMULTIEVENTTRIGGERING_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMMULTIEVENTTRIGGERING_ID_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMMULTIEVENTTRIGGERING_ID_2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMOBDDTC_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMOBDDTC_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPIDCLASS_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPIDCLASS_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPIDDATAELEMENT_0_STARTING_INDEX\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPIDDATAELEMENT_0_NUMBER_INSTANCES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDTR_SIZE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDTR_ID_0\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEMCOMPONENT_REFERENCE_TYPE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDTCATTRIBUTES_REFERENCE_TYPE\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMOBDDTC_REFERENCE_TYPE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMOPERATIONCYCLE_REFERENCE_TYPE\fP   (4U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTENDEDDATACLASS_REFERENCE_TYPE\fP   (5U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMECLASS_REFERENCE_TYPE\fP   (6U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECNUMCLASS_REFERENCE_TYPE\fP   (7U)"
+.br
+.ti -1c
+.RI "#define \fBDEMJ1939FREEZEFRAMECLASS_REFERENCE_TYPE\fP   (8U)"
+.br
+.ti -1c
+.RI "#define \fBDEMMIRRORMEMORY_REFERENCE_TYPE\fP   (9U)"
+.br
+.ti -1c
+.RI "#define \fBDEMPRIMARYMEMORY_REFERENCE_TYPE\fP   (10U)"
+.br
+.ti -1c
+.RI "#define \fBDEMUSERDEFINEDMEMORY_REFERENCE_TYPE\fP   (11U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEVENTPARAMETER_REFERENCE_TYPE\fP   (12U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDEBOUNCECOUNTERBASEDCLASS_REFERENCE_TYPE\fP   (13U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDEBOUNCETIMEBASECLASS_REFERENCE_TYPE\fP   (14U)"
+.br
+.ti -1c
+.RI "#define \fBDEMINDICATOR_REFERENCE_TYPE\fP   (15U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDTC_REFERENCE_TYPE\fP   (16U)"
+.br
+.ti -1c
+.RI "#define \fBDEMENABLECONDITIONGROUP_REFERENCE_TYPE\fP   (17U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSTORAGECONDITIONGROUP_REFERENCE_TYPE\fP   (18U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDATAELEMENTCLASS_REFERENCE_TYPE\fP   (19U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEVENTMEMORYSET_REFERENCE_TYPE\fP   (20U)"
+.br
+.ti -1c
+.RI "#define \fBDEMENABLECONDITION_REFERENCE_TYPE\fP   (21U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTENDEDDATARECORDCLASS_REFERENCE_TYPE\fP   (22U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDIDCLASS_REFERENCE_TYPE\fP   (23U)"
+.br
+.ti -1c
+.RI "#define \fBDEMFREEZEFRAMERECORDCLASS_REFERENCE_TYPE\fP   (24U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSPNCLASS_REFERENCE_TYPE\fP   (25U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTERNALCSDATAELEMENTCLASS_REFERENCE_TYPE\fP   (26U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTERNALSRDATAELEMENTCLASS_REFERENCE_TYPE\fP   (27U)"
+.br
+.ti -1c
+.RI "#define \fBDEMINTERNALDATAELEMENTCLASS_REFERENCE_TYPE\fP   (28U)"
+.br
+.ti -1c
+.RI "#define \fBNVMBLOCKDESCRIPTOR_REFERENCE_TYPE\fP   (29U)"
+.br
+.ti -1c
+.RI "#define \fBFIMFID_REFERENCE_TYPE\fP   (30U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSTORAGECONDITION_REFERENCE_TYPE\fP   (31U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDEBOUNCECOUNTERBASED_CONTAINER_TYPE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDEBOUNCEMONITORINTERNAL_CONTAINER_TYPE\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDEBOUNCETIMEBASE_CONTAINER_TYPE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTERNALCSDATAELEMENTCLASS_CONTAINER_TYPE\fP   (4U)"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTERNALSRDATAELEMENTCLASS_CONTAINER_TYPE\fP   (5U)"
+.br
+.ti -1c
+.RI "#define \fBDEMALTERNATIVEDATAINTERFACE_CONTAINER_TYPE\fP   (6U)"
+.br
+.ti -1c
+.RI "#define \fBDEMALTERNATIVEDATATYPE_CONTAINER_TYPE\fP   (7U)"
+.br
+.ti -1c
+.RI "#define \fBDEMALTERNATIVEDIAGNOSTICDATAELEMENT_CONTAINER_TYPE\fP   (8U)"
+.br
+.ti -1c
+.RI "#define \fBDEMDATAELEMENTINSTANCE_CONTAINER_TYPE\fP   (9U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSUBELEMENTINDATAELEMENTINSTANCE_CONTAINER_TYPE\fP   (10U)"
+.br
+.ti -1c
+.RI "#define \fBDEMSUBELEMENTINIMPLDATAELEMENTINSTANCE_CONTAINER_TYPE\fP   (11U)"
+.br
+.ti -1c
+.RI "#define \fBDEMINTERNALDATAELEMENTCLASS_CONTAINER_TYPE\fP   (12U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_SEVERITY_CHECK_AT_NEXT_HALT\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_SEVERITY_CHECK_IMMEDIATELY\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_SEVERITY_MAINTENANCE_ONLY\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_SEVERITY_NO_SEVERITY\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDURING_SHUTDOWN\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBIMMEDIATE_AT_FIRST_OCCURRENCE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_WWHOBD_CLASS_A\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_WWHOBD_CLASS_B1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_WWHOBD_CLASS_B2\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_WWHOBD_CLASS_C\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_WWHOBD_CLASS_NOCLASS\fP   (4U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVENT_SIGNIFICANCE_FAULT\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVENT_SIGNIFICANCE_OCCURRENCE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DEBOUNCE_FREEZE\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DEBOUNCE_RESET\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTR_UPDATE_ALWAYS\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTR_UPDATE_STEADY\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_NO_STATUS_BYTE_CHANGE\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_ONLY_THIS_CYCLE_AND_READINESS\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_INDICATOR_BLINKING\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_INDICATOR_BLINK_CONT\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_INDICATOR_CONTINUOUS\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_INDICATOR_FAST_FLASH\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_INDICATOR_SLOW_FLASH\fP   (4U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVENT_KIND_BSW\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVENT_KIND_SWC\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBREPORT_AFTER_INIT\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBREPORT_BEFORE_INIT\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_AC\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_BOOSTPR\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_CAT\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_CMPRCMPT\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_EGR\fP   (4U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_EGSENS\fP   (5U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_EVAP\fP   (6U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_FLSYS\fP   (7U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_FLSYS_NONCONT\fP   (8U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_HCCAT\fP   (9U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_HTCAT\fP   (10U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_MISF\fP   (11U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_NONE\fP   (12U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_NOXCAT\fP   (13U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_O2SENS\fP   (14U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_O2SENSHT\fP   (15U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_PMFLT\fP   (16U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_RDY_SECAIR\fP   (17U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLIENT_ONLY_USES_EVENTOVERFLOW_INTERFACE\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLIENT_USES_FULL_FUNCTIONALITY\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBBOOLEAN\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBSINT16\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBSINT32\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBSINT8\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBUINT16\fP   (4U)"
+.br
+.ti -1c
+.RI "#define \fBUINT32\fP   (5U)"
+.br
+.ti -1c
+.RI "#define \fBUINT8\fP   (6U)"
+.br
+.ti -1c
+.RI "#define \fBBIG_ENDIAN\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBLITTLE_ENDIAN\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBOPAQUE\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_AGINGCTR_DOWNCNT\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_AGINGCTR_UPCNT\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_AGINGCTR_UPCNT_FIRST_ACTIVE\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLR_DIST\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLR_TIME\fP   (4U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_CURRENT_FDC\fP   (5U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_CYCLES_SINCE_FIRST_FAILED\fP   (6U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_CYCLES_SINCE_LAST_FAILED\fP   (7U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_FAILED_CYCLES\fP   (8U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_MAX_FDC_DURING_CURRENT_CYCLE\fP   (9U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_MAX_FDC_SINCE_LAST_CLEAR\fP   (10U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_MIL_DIST\fP   (11U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_MIL_TIME\fP   (12U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OCCCTR\fP   (13U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OVFLIND\fP   (14U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_SIGNIFICANCE\fP   (15U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_WARM_UPS\fP   (16U)"
+.br
+.ti -1c
+.RI "#define \fBFINISH\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBSTART\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_TRANSLATION_ISO11992_4\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_TRANSLATION_ISO14229_1\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_TRANSLATION_ISO15031_6\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_TRANSLATION_SAEJ1939_73\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_TRANSLATION_SAE_J2012_DA_DTCFORMAT_04\fP   (4U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_TRIGGER_ON_CONFIRMED\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_TRIGGER_ON_FDC_THRESHOLD\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_TRIGGER_ON_MIRROR\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_TRIGGER_ON_PASSED\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_TRIGGER_ON_PENDING\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_TRIGGER_ON_TEST_FAILED\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_UPDATE_RECORD_NO\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_UPDATE_RECORD_YES\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IGNITION_COMPRESSION\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IGNITION_SPARK\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_DEN_500MILL\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_DEN_COLDSTART\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_DEN_EVAP\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_DEN_NONE\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_DEN_PHYS_API\fP   (4U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_AFRI1\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_AFRI2\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_BOOSTPRS\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_CAT1\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_CAT2\fP   (4U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_EGR\fP   (5U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_EGSENSOR\fP   (6U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_EVAP\fP   (7U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_FLSYS\fP   (8U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_NMHCCAT\fP   (9U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_NOXADSORB\fP   (10U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_NOXCAT\fP   (11U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_OXS1\fP   (12U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_OXS2\fP   (13U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_PF1\fP   (14U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_PF2\fP   (15U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_PMFILTER\fP   (16U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_PRIVATE\fP   (17U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_SAIR\fP   (18U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_SECOXS1\fP   (19U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_IUMPR_SECOXS2\fP   (20U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_RATIO_API\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_RATIO_OBSERVER\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVENT_AVAILABILITY\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_NO_AVAILABILITY\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLRRESP_NONVOLATILE_FINISH\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLRRESP_NONVOLATILE_TRIGGER\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_CLRRESP_VOLATILE\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_ALL_SUPPORTED_DTCS\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_ONLY_CLEAR_ALL_DTCS\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_CAPTURE_ASYNCHRONOUS_TO_REPORTING\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_CAPTURE_SYNCHRONOUS_TO_REPORTING\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVCOMB_DISABLED\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVCOMB_ONRETRIEVAL\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVCOMB_ONSTORAGE\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DISPLACEMENT_FULL\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DISPLACEMENT_NONE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DISPLACEMENT_PRIO_OCC\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_DEP_SEC_ECU\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_MASTER_ECU\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_NO_OBD_SUPPORT\fP   (2U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_OBD_PRIMARY_ECU\fP   (3U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_PROCESS_OCCCTR_CDTC\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_PROCESS_OCCCTR_TF\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_STATUS_BIT_AGING_AND_DISPLACEMENT\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_STATUS_BIT_NORMAL\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_SUPPRESSION\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_NO_SUPPRESSION\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_FF_RECNUM_CALCULATED\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEM_FF_RECNUM_CONFIGURED\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_PARAMETER_8BIT_VALUE\fP   (255U)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_PARAMETER_16BIT_VALUE\fP   (65535U)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_PARAMETER_32BIT_VALUE\fP   (4294967295U)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_PARAMETER_64BIT_VALUE\fP   (18446744073709551615U)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_PARAMETER_BOOLEAN_VALUE\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_PARAMETER_ENUM_VALUE\fP   (21U)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_PARAMETER_STRING_VALUE\fP   ('\\0')"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_REFERENCE_TYPE\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_REFERENCE_NUMBER_INSTANCES\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_REFERENCE_VALUE\fP   ((void *)0)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_PARAMETER_FUNCTION_NAME_VALUE\fP   ((void *)0)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_CONTAINER_TYPE\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_CONTAINER_STARTING_VALUE\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_CONTAINER_NUMBER_INSTANCES\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBFALSE\fP   (0U)"
+.br
+.ti -1c
+.RI "#define \fBTRUE\fP   (1U)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define BIG_ENDIAN   (0U)"
+
+.SS "#define BOOLEAN   (0U)"
+
+.SS "#define DEFAULT_CONTAINER_NUMBER_INSTANCES   (0U)"
+
+.SS "#define DEFAULT_CONTAINER_STARTING_VALUE   (0U)"
+
+.SS "#define DEFAULT_CONTAINER_TYPE   (0U)"
+
+.SS "#define DEFAULT_PARAMETER_16BIT_VALUE   (65535U)"
+
+.SS "#define DEFAULT_PARAMETER_32BIT_VALUE   (4294967295U)"
+
+.SS "#define DEFAULT_PARAMETER_64BIT_VALUE   (18446744073709551615U)"
+
+.SS "#define DEFAULT_PARAMETER_8BIT_VALUE   (255U)"
+
+.SS "#define DEFAULT_PARAMETER_BOOLEAN_VALUE   (0U)"
+
+.SS "#define DEFAULT_PARAMETER_ENUM_VALUE   (21U)"
+
+.SS "#define DEFAULT_PARAMETER_FUNCTION_NAME_VALUE   ((void *)0)"
+
+.SS "#define DEFAULT_PARAMETER_STRING_VALUE   ('\\0')"
+
+.SS "#define DEFAULT_REFERENCE_NUMBER_INSTANCES   (0U)"
+
+.SS "#define DEFAULT_REFERENCE_TYPE   (0U)"
+
+.SS "#define DEFAULT_REFERENCE_VALUE   ((void *)0)"
+
+.SS "#define DEM_AGINGCTR_DOWNCNT   (0U)"
+
+.SS "#define DEM_AGINGCTR_UPCNT   (1U)"
+
+.SS "#define DEM_AGINGCTR_UPCNT_FIRST_ACTIVE   (2U)"
+
+.SS "#define DEM_ALL_SUPPORTED_DTCS   (0U)"
+
+.SS "#define DEM_CAPTURE_ASYNCHRONOUS_TO_REPORTING   (0U)"
+
+.SS "#define DEM_CAPTURE_SYNCHRONOUS_TO_REPORTING   (1U)"
+
+.SS "#define DEM_CLIENT_ONLY_USES_EVENTOVERFLOW_INTERFACE   (0U)"
+
+.SS "#define DEM_CLIENT_USES_FULL_FUNCTIONALITY   (1U)"
+
+.SS "#define DEM_CLR_DIST   (3U)"
+
+.SS "#define DEM_CLR_TIME   (4U)"
+
+.SS "#define DEM_CLRRESP_NONVOLATILE_FINISH   (0U)"
+
+.SS "#define DEM_CLRRESP_NONVOLATILE_TRIGGER   (1U)"
+
+.SS "#define DEM_CLRRESP_VOLATILE   (2U)"
+
+.SS "#define DEM_CURRENT_FDC   (5U)"
+
+.SS "#define DEM_CYCLES_SINCE_FIRST_FAILED   (6U)"
+
+.SS "#define DEM_CYCLES_SINCE_LAST_FAILED   (7U)"
+
+.SS "#define DEM_DEBOUNCE_FREEZE   (0U)"
+
+.SS "#define DEM_DEBOUNCE_RESET   (1U)"
+
+.SS "#define DEM_DISPLACEMENT_FULL   (0U)"
+
+.SS "#define DEM_DISPLACEMENT_NONE   (1U)"
+
+.SS "#define DEM_DISPLACEMENT_PRIO_OCC   (2U)"
+
+.SS "#define DEM_DTC_SUPPRESSION   (0U)"
+
+.SS "#define DEM_DTC_TRANSLATION_ISO11992_4   (0U)"
+
+.SS "#define DEM_DTC_TRANSLATION_ISO14229_1   (1U)"
+
+.SS "#define DEM_DTC_TRANSLATION_ISO15031_6   (2U)"
+
+.SS "#define DEM_DTC_TRANSLATION_SAE_J2012_DA_DTCFORMAT_04   (4U)"
+
+.SS "#define DEM_DTC_TRANSLATION_SAEJ1939_73   (3U)"
+
+.SS "#define DEM_DTC_WWHOBD_CLASS_A   (0U)"
+
+.SS "#define DEM_DTC_WWHOBD_CLASS_B1   (1U)"
+
+.SS "#define DEM_DTC_WWHOBD_CLASS_B2   (2U)"
+
+.SS "#define DEM_DTC_WWHOBD_CLASS_C   (3U)"
+
+.SS "#define DEM_DTC_WWHOBD_CLASS_NOCLASS   (4U)"
+
+.SS "#define DEM_DTR_UPDATE_ALWAYS   (0U)"
+
+.SS "#define DEM_DTR_UPDATE_STEADY   (1U)"
+
+.SS "#define DEM_EVCOMB_DISABLED   (0U)"
+
+.SS "#define DEM_EVCOMB_ONRETRIEVAL   (1U)"
+
+.SS "#define DEM_EVCOMB_ONSTORAGE   (2U)"
+
+.SS "#define DEM_EVENT_AVAILABILITY   (0U)"
+
+.SS "#define DEM_EVENT_KIND_BSW   (0U)"
+
+.SS "#define DEM_EVENT_KIND_SWC   (1U)"
+
+.SS "#define DEM_EVENT_SIGNIFICANCE_FAULT   (0U)"
+
+.SS "#define DEM_EVENT_SIGNIFICANCE_OCCURRENCE   (1U)"
+
+.SS "#define DEM_FAILED_CYCLES   (8U)"
+
+.SS "#define DEM_FF_RECNUM_CALCULATED   (0U)"
+
+.SS "#define DEM_FF_RECNUM_CONFIGURED   (1U)"
+
+.SS "#define DEM_IGNITION_COMPRESSION   (0U)"
+
+.SS "#define DEM_IGNITION_SPARK   (1U)"
+
+.SS "#define DEM_INDICATOR_BLINK_CONT   (1U)"
+
+.SS "#define DEM_INDICATOR_BLINKING   (0U)"
+
+.SS "#define DEM_INDICATOR_CONTINUOUS   (2U)"
+
+.SS "#define DEM_INDICATOR_FAST_FLASH   (3U)"
+
+.SS "#define DEM_INDICATOR_SLOW_FLASH   (4U)"
+
+.SS "#define DEM_IUMPR_AFRI1   (0U)"
+
+.SS "#define DEM_IUMPR_AFRI2   (1U)"
+
+.SS "#define DEM_IUMPR_BOOSTPRS   (2U)"
+
+.SS "#define DEM_IUMPR_CAT1   (3U)"
+
+.SS "#define DEM_IUMPR_CAT2   (4U)"
+
+.SS "#define DEM_IUMPR_DEN_500MILL   (0U)"
+
+.SS "#define DEM_IUMPR_DEN_COLDSTART   (1U)"
+
+.SS "#define DEM_IUMPR_DEN_EVAP   (2U)"
+
+.SS "#define DEM_IUMPR_DEN_NONE   (3U)"
+
+.SS "#define DEM_IUMPR_DEN_PHYS_API   (4U)"
+
+.SS "#define DEM_IUMPR_EGR   (5U)"
+
+.SS "#define DEM_IUMPR_EGSENSOR   (6U)"
+
+.SS "#define DEM_IUMPR_EVAP   (7U)"
+
+.SS "#define DEM_IUMPR_FLSYS   (8U)"
+
+.SS "#define DEM_IUMPR_NMHCCAT   (9U)"
+
+.SS "#define DEM_IUMPR_NOXADSORB   (10U)"
+
+.SS "#define DEM_IUMPR_NOXCAT   (11U)"
+
+.SS "#define DEM_IUMPR_OXS1   (12U)"
+
+.SS "#define DEM_IUMPR_OXS2   (13U)"
+
+.SS "#define DEM_IUMPR_PF1   (14U)"
+
+.SS "#define DEM_IUMPR_PF2   (15U)"
+
+.SS "#define DEM_IUMPR_PMFILTER   (16U)"
+
+.SS "#define DEM_IUMPR_PRIVATE   (17U)"
+
+.SS "#define DEM_IUMPR_SAIR   (18U)"
+
+.SS "#define DEM_IUMPR_SECOXS1   (19U)"
+
+.SS "#define DEM_IUMPR_SECOXS2   (20U)"
+
+.SS "#define DEM_MAX_FDC_DURING_CURRENT_CYCLE   (9U)"
+
+.SS "#define DEM_MAX_FDC_SINCE_LAST_CLEAR   (10U)"
+
+.SS "#define DEM_MIL_DIST   (11U)"
+
+.SS "#define DEM_MIL_TIME   (12U)"
+
+.SS "#define DEM_NO_AVAILABILITY   (1U)"
+
+.SS "#define DEM_NO_STATUS_BYTE_CHANGE   (0U)"
+
+.SS "#define DEM_NO_SUPPRESSION   (1U)"
+
+.SS "#define DEM_OBD_DEP_SEC_ECU   (0U)"
+
+.SS "#define DEM_OBD_MASTER_ECU   (1U)"
+
+.SS "#define DEM_OBD_NO_OBD_SUPPORT   (2U)"
+
+.SS "#define DEM_OBD_PRIMARY_ECU   (3U)"
+
+.SS "#define DEM_OBD_RDY_AC   (0U)"
+
+.SS "#define DEM_OBD_RDY_BOOSTPR   (1U)"
+
+.SS "#define DEM_OBD_RDY_CAT   (2U)"
+
+.SS "#define DEM_OBD_RDY_CMPRCMPT   (3U)"
+
+.SS "#define DEM_OBD_RDY_EGR   (4U)"
+
+.SS "#define DEM_OBD_RDY_EGSENS   (5U)"
+
+.SS "#define DEM_OBD_RDY_EVAP   (6U)"
+
+.SS "#define DEM_OBD_RDY_FLSYS   (7U)"
+
+.SS "#define DEM_OBD_RDY_FLSYS_NONCONT   (8U)"
+
+.SS "#define DEM_OBD_RDY_HCCAT   (9U)"
+
+.SS "#define DEM_OBD_RDY_HTCAT   (10U)"
+
+.SS "#define DEM_OBD_RDY_MISF   (11U)"
+
+.SS "#define DEM_OBD_RDY_NONE   (12U)"
+
+.SS "#define DEM_OBD_RDY_NOXCAT   (13U)"
+
+.SS "#define DEM_OBD_RDY_O2SENS   (14U)"
+
+.SS "#define DEM_OBD_RDY_O2SENSHT   (15U)"
+
+.SS "#define DEM_OBD_RDY_PMFLT   (16U)"
+
+.SS "#define DEM_OBD_RDY_SECAIR   (17U)"
+
+.SS "#define DEM_OCCCTR   (13U)"
+
+.SS "#define DEM_ONLY_CLEAR_ALL_DTCS   (1U)"
+
+.SS "#define DEM_ONLY_THIS_CYCLE_AND_READINESS   (1U)"
+
+.SS "#define DEM_OVFLIND   (14U)"
+
+.SS "#define DEM_PROCESS_OCCCTR_CDTC   (0U)"
+
+.SS "#define DEM_PROCESS_OCCCTR_TF   (1U)"
+
+.SS "#define DEM_RATIO_API   (0U)"
+
+.SS "#define DEM_RATIO_OBSERVER   (1U)"
+
+.SS "#define DEM_SEVERITY_CHECK_AT_NEXT_HALT   (0U)"
+
+.SS "#define DEM_SEVERITY_CHECK_IMMEDIATELY   (1U)"
+
+.SS "#define DEM_SEVERITY_MAINTENANCE_ONLY   (2U)"
+
+.SS "#define DEM_SEVERITY_NO_SEVERITY   (3U)"
+
+.SS "#define DEM_SIGNIFICANCE   (15U)"
+
+.SS "#define DEM_STATUS_BIT_AGING_AND_DISPLACEMENT   (0U)"
+
+.SS "#define DEM_STATUS_BIT_NORMAL   (1U)"
+
+.SS "#define DEM_TRIGGER_ON_CONFIRMED   (0U)"
+
+.SS "#define DEM_TRIGGER_ON_FDC_THRESHOLD   (1U)"
+
+.SS "#define DEM_TRIGGER_ON_MIRROR   (2U)"
+
+.SS "#define DEM_TRIGGER_ON_PASSED   (3U)"
+
+.SS "#define DEM_TRIGGER_ON_PENDING   (2U)"
+
+.SS "#define DEM_TRIGGER_ON_TEST_FAILED   (2U)"
+
+.SS "#define DEM_UPDATE_RECORD_NO   (0U)"
+
+.SS "#define DEM_UPDATE_RECORD_YES   (1U)"
+
+.SS "#define DEM_WARM_UPS   (16U)"
+
+.SS "#define DEMALTERNATIVEDATAINTERFACE_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMALTERNATIVEDATAINTERFACE_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMALTERNATIVEDATAINTERFACE_CONTAINER_TYPE   (6U)"
+
+.SS "#define DEMALTERNATIVEDATATYPE_CONTAINER_TYPE   (7U)"
+
+.SS "#define DEMALTERNATIVEDIAGNOSTICDATAELEMENT_CONTAINER_TYPE   (8U)"
+
+.SS "#define DEMCALLBACKCLEAREVENTALLOWED_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMCALLBACKCLEAREVENTALLOWED_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMCALLBACKDTCSTATUSCHANGED_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMCALLBACKDTCSTATUSCHANGED_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMCALLBACKDTCSTATUSCHANGED_ID_0   (0U)"
+
+.SS "#define DEMCALLBACKDTCSTATUSCHANGED_SIZE   (1U)"
+
+.SS "#define DEMCALLBACKEVENTDATACHANGED_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMCALLBACKEVENTDATACHANGED_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMCALLBACKEVENTUDSSTATUSCHANGED_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMCALLBACKEVENTUDSSTATUSCHANGED_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMCALLBACKINITMFORE_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMCALLBACKINITMFORE_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMCALLBACKMONITORSTATUSCHANGED_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMCALLBACKMONITORSTATUSCHANGED_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMCALLBACKOBDDTCSTATUSCHANGED_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMCALLBACKOBDDTCSTATUSCHANGED_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMCALLBACKOBDDTCSTATUSCHANGED_ID_0   (0U)"
+
+.SS "#define DEMCALLBACKOBDDTCSTATUSCHANGED_SIZE   (1U)"
+
+.SS "#define DEMCLEARDTCNOTIFICATION_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMCLEARDTCNOTIFICATION_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMCLEARDTCNOTIFICATION_ID_0   (0U)"
+
+.SS "#define DEMCLEARDTCNOTIFICATION_SIZE   (1U)"
+
+.SS "#define DEMCLIENT_ID_0   (0U)"
+
+.SS "#define DEMCLIENT_ID_1   (1U)"
+
+.SS "#define DEMCLIENT_ID_2   (2U)"
+
+.SS "#define DEMCLIENT_SIZE   (3U)"
+
+.SS "#define DEMCOMPONENT_ID_0   (0U)"
+
+.SS "#define DEMCOMPONENT_ID_1   (1U)"
+
+.SS "#define DEMCOMPONENT_ID_2   (2U)"
+
+.SS "#define DEMCOMPONENT_REFERENCE_TYPE   (1U)"
+
+.SS "#define DEMCOMPONENT_SIZE   (3U)"
+
+.SS "#define DEMDATAELEMENTCLASS_REFERENCE_TYPE   (19U)"
+
+.SS "#define DEMDATAELEMENTINSTANCE_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMDATAELEMENTINSTANCE_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMDATAELEMENTINSTANCE_CONTAINER_TYPE   (9U)"
+
+.SS "#define DEMDEBOUNCECOUNTERBASED_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMDEBOUNCECOUNTERBASED_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMDEBOUNCECOUNTERBASED_CONTAINER_TYPE   (1U)"
+
+.SS "#define DEMDEBOUNCECOUNTERBASEDCLASS_REFERENCE_TYPE   (13U)"
+
+.SS "#define DEMDEBOUNCEMONITORINTERNAL_CONTAINER_TYPE   (2U)"
+
+.SS "#define DEMDEBOUNCETIMEBASE_CONTAINER_TYPE   (3U)"
+
+.SS "#define DEMDEBOUNCETIMEBASECLASS_REFERENCE_TYPE   (14U)"
+
+.SS "#define DEMDIDCLASS_REFERENCE_TYPE   (23U)"
+
+.SS "#define DEMDIDCLASS_SIZE   (0U)"
+
+.SS "#define DEMDTC_ID_0   (0U)"
+
+.SS "#define DEMDTC_ID_1   (1U)"
+
+.SS "#define DEMDTC_ID_2   (2U)"
+
+.SS "#define DEMDTC_REFERENCE_TYPE   (16U)"
+
+.SS "#define DEMDTC_SIZE   (3U)"
+
+.SS "#define DEMDTCATTRIBUTES_ID_0   (0U)"
+
+.SS "#define DEMDTCATTRIBUTES_ID_1   (1U)"
+
+.SS "#define DEMDTCATTRIBUTES_ID_2   (2U)"
+
+.SS "#define DEMDTCATTRIBUTES_REFERENCE_TYPE   (2U)"
+
+.SS "#define DEMDTCATTRIBUTES_SIZE   (3U)"
+
+.SS "#define DEMDTR_ID_0   (0U)"
+
+.SS "#define DEMDTR_SIZE   (1U)"
+
+.SS "#define DEME0TENDEDDATARECORDCLASS_SIZE   (0U)"
+
+.SS "#define DEME0TENDEDDATARECORDCLASS_SIZE   (0U)"
+
+.SS "#define DEME1TERNALCSDATAELEMENTCLASS_SIZE   (1U)"
+
+.SS "#define DEME1TERNALSRDATAELEMENTCLASS_SIZE   (1U)"
+
+.SS "#define DEME3TENDEDDATACLASS_SIZE   (3U)"
+
+.SS "#define DEMENABLECONDITION_ID_0   (0U)"
+
+.SS "#define DEMENABLECONDITION_ID_1   (1U)"
+
+.SS "#define DEMENABLECONDITION_ID_2   (2U)"
+
+.SS "#define DEMENABLECONDITION_REFERENCE_TYPE   (21U)"
+
+.SS "#define DEMENABLECONDITION_SIZE   (3U)"
+
+.SS "#define DEMENABLECONDITIONGROUP_ID_0   (0U)"
+
+.SS "#define DEMENABLECONDITIONGROUP_ID_1   (1U)"
+
+.SS "#define DEMENABLECONDITIONGROUP_ID_2   (2U)"
+
+.SS "#define DEMENABLECONDITIONGROUP_REFERENCE_TYPE   (17U)"
+
+.SS "#define DEMENABLECONDITIONGROUP_SIZE   (3U)"
+
+.SS "#define DEMEVENTMEMORYSET_ID_0   (0U)"
+
+.SS "#define DEMEVENTMEMORYSET_ID_1   (1U)"
+
+.SS "#define DEMEVENTMEMORYSET_ID_2   (2U)"
+
+.SS "#define DEMEVENTMEMORYSET_REFERENCE_TYPE   (20U)"
+
+.SS "#define DEMEVENTMEMORYSET_SIZE   (3U)"
+
+.SS "#define DEMEVENTPARAMETER_ID_0   (0U)"
+
+.SS "#define DEMEVENTPARAMETER_REFERENCE_TYPE   (12U)"
+
+.SS "#define DEMEVENTPARAMETER_SIZE   (2U)"
+
+.SS "#define DEMEXTENDEDDATACLASS_ID_0   (0U)"
+
+.SS "#define DEMEXTENDEDDATACLASS_ID_1   (1U)"
+
+.SS "#define DEMEXTENDEDDATACLASS_ID_2   (2U)"
+
+.SS "#define DEMEXTENDEDDATACLASS_REFERENCE_TYPE   (5U)"
+
+.SS "#define DEMEXTENDEDDATARECORDCLASS_REFERENCE_TYPE   (22U)"
+
+.SS "#define DEMEXTERNALCSDATAELEMENTCLASS_CONTAINER_TYPE   (4U)"
+
+.SS "#define DEMEXTERNALCSDATAELEMENTCLASS_ID_0   (0U)"
+
+.SS "#define DEMEXTERNALCSDATAELEMENTCLASS_REFERENCE_TYPE   (26U)"
+
+.SS "#define DEMEXTERNALSRDATAELEMENTCLASS_CONTAINER_TYPE   (5U)"
+
+.SS "#define DEMEXTERNALSRDATAELEMENTCLASS_ID_0   (0U)"
+
+.SS "#define DEMEXTERNALSRDATAELEMENTCLASS_REFERENCE_TYPE   (27U)"
+
+.SS "#define DEMFREEZEFRAMECLASS_ID_0   (0U)"
+
+.SS "#define DEMFREEZEFRAMECLASS_ID_1   (1U)"
+
+.SS "#define DEMFREEZEFRAMECLASS_ID_2   (2U)"
+
+.SS "#define DEMFREEZEFRAMECLASS_REFERENCE_TYPE   (6U)"
+
+.SS "#define DEMFREEZEFRAMECLASS_SIZE   (3U)"
+
+.SS "#define DEMFREEZEFRAMERECNUMCLASS_ID_0   (0U)"
+
+.SS "#define DEMFREEZEFRAMERECNUMCLASS_ID_1   (1U)"
+
+.SS "#define DEMFREEZEFRAMERECNUMCLASS_ID_2   (2U)"
+
+.SS "#define DEMFREEZEFRAMERECNUMCLASS_REFERENCE_TYPE   (7U)"
+
+.SS "#define DEMFREEZEFRAMERECNUMCLASS_SIZE   (3U)"
+
+.SS "#define DEMFREEZEFRAMERECORDCLASS_ID_0   (0U)"
+
+.SS "#define DEMFREEZEFRAMERECORDCLASS_ID_0   (0U)"
+
+.SS "#define DEMFREEZEFRAMERECORDCLASS_ID_1   (1U)"
+
+.SS "#define DEMFREEZEFRAMERECORDCLASS_ID_1   (1U)"
+
+.SS "#define DEMFREEZEFRAMERECORDCLASS_ID_2   (2U)"
+
+.SS "#define DEMFREEZEFRAMERECORDCLASS_ID_2   (2U)"
+
+.SS "#define DEMFREEZEFRAMERECORDCLASS_REFERENCE_TYPE   (24U)"
+
+.SS "#define DEMFREEZEFRAMERECORDCLASS_SIZE   (3U)"
+
+.SS "#define DEMFREEZEFRAMERECORDCLASS_SIZE   (3U)"
+
+.SS "#define DEMGENERALOBD_ID_0   (0U)"
+
+.SS "#define DEMGENERALOBD_SIZE   (1U)"
+
+.SS "#define DEMGROUPOFDTC_ID_0   (0U)"
+
+.SS "#define DEMGROUPOFDTC_ID_1   (1U)"
+
+.SS "#define DEMGROUPOFDTC_ID_2   (2U)"
+
+.SS "#define DEMGROUPOFDTC_SIZE   (3U)"
+
+.SS "#define DEMINDICATOR_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMINDICATOR_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMINDICATOR_ID_0   (0U)"
+
+.SS "#define DEMINDICATOR_REFERENCE_TYPE   (15U)"
+
+.SS "#define DEMINDICATOR_SIZE   (1U)"
+
+.SS "#define DEMINDICATORATTRIBUTE_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMINDICATORATTRIBUTE_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMINTERNALDATAELEMENTCLASS_CONTAINER_TYPE   (12U)"
+
+.SS "#define DEMINTERNALDATAELEMENTCLASS_ID_0   (0U)"
+
+.SS "#define DEMINTERNALDATAELEMENTCLASS_REFERENCE_TYPE   (28U)"
+
+.SS "#define DEMINTERNALDATAELEMENTCLASS_SIZE   (1U)"
+
+.SS "#define DEMJ1939FREEZEFRAMECLASS_REFERENCE_TYPE   (8U)"
+
+.SS "#define DEMMIRRORMEMORY_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMMIRRORMEMORY_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMMIRRORMEMORY_ID_0   (0U)"
+
+.SS "#define DEMMIRRORMEMORY_REFERENCE_TYPE   (9U)"
+
+.SS "#define DEMMIRRORMEMORY_SIZE   (1U)"
+
+.SS "#define DEMMULTIEVENTTRIGGERING_ID_0   (0U)"
+
+.SS "#define DEMMULTIEVENTTRIGGERING_ID_1   (1U)"
+
+.SS "#define DEMMULTIEVENTTRIGGERING_ID_2   (2U)"
+
+.SS "#define DEMMULTIEVENTTRIGGERING_SIZE   (3U)"
+
+.SS "#define DEMNVRAMBLOCKID_ID_0   (0U)"
+
+.SS "#define DEMNVRAMBLOCKID_ID_1   (1U)"
+
+.SS "#define DEMNVRAMBLOCKID_ID_2   (2U)"
+
+.SS "#define DEMNVRAMBLOCKID_SIZE   (3U)"
+
+.SS "#define DEMOBDDTC_ID_0   (0U)"
+
+.SS "#define DEMOBDDTC_REFERENCE_TYPE   (3U)"
+
+.SS "#define DEMOBDDTC_SIZE   (1U)"
+
+.SS "#define DEMOPERATIONCYCLE_ID_0   (0U)"
+
+.SS "#define DEMOPERATIONCYCLE_ID_1   (1U)"
+
+.SS "#define DEMOPERATIONCYCLE_ID_2   (2U)"
+
+.SS "#define DEMOPERATIONCYCLE_REFERENCE_TYPE   (4U)"
+
+.SS "#define DEMOPERATIONCYCLE_SIZE   (3U)"
+
+.SS "#define DEMPIDCLASS_ID_0   (0U)"
+
+.SS "#define DEMPIDCLASS_SIZE   (1U)"
+
+.SS "#define DEMPIDDATAELEMENT_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMPIDDATAELEMENT_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMPRIMARYMEMORY_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMPRIMARYMEMORY_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMPRIMARYMEMORY_1_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMPRIMARYMEMORY_1_STARTING_INDEX   (1U)"
+
+.SS "#define DEMPRIMARYMEMORY_2_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMPRIMARYMEMORY_2_STARTING_INDEX   (2U)"
+
+.SS "#define DEMPRIMARYMEMORY_ID_0   (0U)"
+
+.SS "#define DEMPRIMARYMEMORY_ID_1   (1U)"
+
+.SS "#define DEMPRIMARYMEMORY_ID_2   (2U)"
+
+.SS "#define DEMPRIMARYMEMORY_REFERENCE_TYPE   (10U)"
+
+.SS "#define DEMPRIMARYMEMORY_SIZE   (3U)"
+
+.SS "#define DEMRATIO_ID_0   (0U)"
+
+.SS "#define DEMRATIO_ID_1   (1U)"
+
+.SS "#define DEMRATIO_ID_2   (2U)"
+
+.SS "#define DEMRATIO_SIZE   (3U)"
+
+.SS "#define DEMSPNCLASS_REFERENCE_TYPE   (25U)"
+
+.SS "#define DEMSTORAGECONDITION_ID_0   (0U)"
+
+.SS "#define DEMSTORAGECONDITION_ID_1   (1U)"
+
+.SS "#define DEMSTORAGECONDITION_ID_2   (2U)"
+
+.SS "#define DEMSTORAGECONDITION_REFERENCE_TYPE   (31U)"
+
+.SS "#define DEMSTORAGECONDITION_SIZE   (3U)"
+
+.SS "#define DEMSTORAGECONDITIONGROUP_ID_0   (0U)"
+
+.SS "#define DEMSTORAGECONDITIONGROUP_ID_1   (1U)"
+
+.SS "#define DEMSTORAGECONDITIONGROUP_ID_2   (2U)"
+
+.SS "#define DEMSTORAGECONDITIONGROUP_REFERENCE_TYPE   (18U)"
+
+.SS "#define DEMSTORAGECONDITIONGROUP_SIZE   (3U)"
+
+.SS "#define DEMSUBELEMENTINDATAELEMENTINSTANCE_CONTAINER_TYPE   (10U)"
+
+.SS "#define DEMSUBELEMENTINIMPLDATAELEMENTINSTANCE_CONTAINER_TYPE   (11U)"
+
+.SS "#define DEMUSERDEFINEDMEMORY_0_NUMBER_INSTANCES   (1U)"
+
+.SS "#define DEMUSERDEFINEDMEMORY_0_STARTING_INDEX   (0U)"
+
+.SS "#define DEMUSERDEFINEDMEMORY_ID_0   (0U)"
+
+.SS "#define DEMUSERDEFINEDMEMORY_REFERENCE_TYPE   (11U)"
+
+.SS "#define DEMUSERDEFINEDMEMORY_SIZE   (1U)"
+
+.SS "#define DURING_SHUTDOWN   (0U)"
+
+.SS "#define FALSE   (0U)"
+
+.SS "#define FIMFID_REFERENCE_TYPE   (30U)"
+
+.SS "#define FINISH   (0U)"
+
+.SS "#define IMMEDIATE_AT_FIRST_OCCURRENCE   (1U)"
+
+.SS "#define LITTLE_ENDIAN   (1U)"
+
+.SS "#define NVMBLOCKDESCRIPTOR_REFERENCE_TYPE   (29U)"
+
+.SS "#define OPAQUE   (2U)"
+
+.SS "#define REPORT_AFTER_INIT   (0U)"
+
+.SS "#define REPORT_BEFORE_INIT   (1U)"
+
+.SS "#define SINT16   (1U)"
+
+.SS "#define SINT32   (2U)"
+
+.SS "#define SINT8   (3U)"
+
+.SS "#define START   (1U)"
+
+.SS "#define TRUE   (1U)"
+
+.SS "#define UINT16   (4U)"
+
+.SS "#define UINT32   (5U)"
+
+.SS "#define UINT8   (6U)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DEM from the source code\&.

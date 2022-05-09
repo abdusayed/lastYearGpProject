@@ -1,0 +1,170 @@
+.TH "DemDTCAttributes_s" 3 "Mon May 10 2021" "DEM" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DemDTCAttributes_s
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Dem_Types\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBboolean\fP \fBDemAgingAllowed\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemAgingCycleCounterThreshold\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemAgingCycleCounterThresholdForTFSLC\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemDTCPriority\fP"
+.br
+.ti -1c
+.RI "\fBDemDTCSignificance_Enum\fP \fBDemDTCSignificance\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemMaxNumberFreezeFrameRecords\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemAgingCycleRef_type\fP"
+.br
+.ti -1c
+.RI "\fBDemOperationCycle_s\fP * \fBDemAgingCycleRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemAgingCycleRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemExtendedDataClassRef_type\fP"
+.br
+.ti -1c
+.RI "\fBDemExtendedDataClass_s\fP * \fBDemExtendedDataClassRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemExtendedDataClassRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemFreezeFrameClassRef_type\fP"
+.br
+.ti -1c
+.RI "\fBDemFreezeFrameClass_s\fP * \fBDemFreezeFrameClassRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemFreezeFrameClassRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemFreezeFrameRecNumClassRef_type\fP"
+.br
+.ti -1c
+.RI "\fBDemFreezeFrameRecNumClass_s\fP * \fBDemFreezeFrameRecNumClassRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemFreezeFrameRecNumClassRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemWWHOBDFreezeFrameClassRef_type\fP"
+.br
+.ti -1c
+.RI "\fBDemFreezeFrameClass_s\fP * \fBDemWWHOBDFreezeFrameClassRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemWWHOBDFreezeFrameClassRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemMemoryDestinationRef_type\fP"
+.br
+.ti -1c
+.RI "\fBDem_Primary_UserDefined_Memory_s\fP * \fBDemMemoryDestinationRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemMemoryDestinationRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemJ1939ExpandedFreezeFrameClassRef_type\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP * \fBDemJ1939ExpandedFreezeFrameClassRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemJ1939ExpandedFreezeFrameClassRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemJ1939FreezeFrameClassRef_type\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP * \fBDemJ1939FreezeFrameClassRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemJ1939FreezeFrameClassRef_numberOfElements\fP"
+.br
+.in -1c
+.SH "Field Documentation"
+.PP 
+.SS "\fBboolean\fP DemAgingAllowed"
+
+.SS "\fBuint8\fP DemAgingCycleCounterThreshold"
+
+.SS "\fBuint8\fP DemAgingCycleCounterThresholdForTFSLC"
+
+.SS "\fBuint8\fP DemAgingCycleRef_numberOfElements"
+
+.SS "\fBDemOperationCycle_s\fP* DemAgingCycleRef_ptr"
+
+.SS "\fBuint8\fP DemAgingCycleRef_type"
+
+.SS "\fBuint8\fP DemDTCPriority"
+
+.SS "\fBDemDTCSignificance_Enum\fP DemDTCSignificance"
+
+.SS "\fBuint8\fP DemExtendedDataClassRef_numberOfElements"
+
+.SS "\fBDemExtendedDataClass_s\fP* DemExtendedDataClassRef_ptr"
+
+.SS "\fBuint8\fP DemExtendedDataClassRef_type"
+
+.SS "\fBuint8\fP DemFreezeFrameClassRef_numberOfElements"
+
+.SS "\fBDemFreezeFrameClass_s\fP* DemFreezeFrameClassRef_ptr"
+
+.SS "\fBuint8\fP DemFreezeFrameClassRef_type"
+
+.SS "\fBuint8\fP DemFreezeFrameRecNumClassRef_numberOfElements"
+
+.SS "\fBDemFreezeFrameRecNumClass_s\fP* DemFreezeFrameRecNumClassRef_ptr"
+
+.SS "\fBuint8\fP DemFreezeFrameRecNumClassRef_type"
+
+.SS "\fBuint8\fP DemJ1939ExpandedFreezeFrameClassRef_numberOfElements"
+
+.SS "\fBuint8\fP* DemJ1939ExpandedFreezeFrameClassRef_ptr"
+
+.SS "\fBuint8\fP DemJ1939ExpandedFreezeFrameClassRef_type"
+
+.SS "\fBuint8\fP DemJ1939FreezeFrameClassRef_numberOfElements"
+
+.SS "\fBuint8\fP* DemJ1939FreezeFrameClassRef_ptr"
+
+.SS "\fBuint8\fP DemJ1939FreezeFrameClassRef_type"
+
+.SS "\fBuint8\fP DemMaxNumberFreezeFrameRecords"
+
+.SS "\fBuint8\fP DemMemoryDestinationRef_numberOfElements"
+
+.SS "\fBDem_Primary_UserDefined_Memory_s\fP* DemMemoryDestinationRef_ptr"
+
+.SS "\fBuint8\fP DemMemoryDestinationRef_type"
+
+.SS "\fBuint8\fP DemWWHOBDFreezeFrameClassRef_numberOfElements"
+
+.SS "\fBDemFreezeFrameClass_s\fP* DemWWHOBDFreezeFrameClassRef_ptr"
+
+.SS "\fBuint8\fP DemWWHOBDFreezeFrameClassRef_type"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DEM from the source code\&.

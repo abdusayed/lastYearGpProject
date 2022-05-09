@@ -1,0 +1,325 @@
+.TH "Rte_Dem_Type.h" 3 "Mon May 10 2021" "DEM" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Rte_Dem_Type.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Platform_Types\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPlatform_Types\fP"
+.br
+.ti -1c
+.RI "#define \fBMAXNUNBEROFEVENTS\fP   \fBDEMEVENTPARAMETER_SIZE\fP"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVENT_STATUS_PASSED\fP   (\fBDem_EventStatusType\fP)0x00U"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVENT_STATUS_FAILED\fP   (\fBDem_EventStatusType\fP)0x01U"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVENT_STATUS_PREPASSED\fP   (\fBDem_EventStatusType\fP)0x02U"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVENT_STATUS_PREFAILED\fP   (\fBDem_EventStatusType\fP)0x03U"
+.br
+.ti -1c
+.RI "#define \fBDEM_EVENT_STATUS_FDC_THRESHOLD_REACHED\fP   (\fBDem_EventStatusType\fP)0x04U"
+.br
+.ti -1c
+.RI "#define \fBDEM_DEBOUNCE_STATUS_FREEZE\fP   (\fBDem_DebounceResetStatusType\fP)0x00"
+.br
+.ti -1c
+.RI "#define \fBDEM_DEBOUNCE_STATUS_RESET\fP   (\fBDem_DebounceResetStatusType\fP)0x01"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_FORMAT_OBD\fP   (\fBDem_DTCFormatType\fP)0"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_FORMAT_UDS\fP   (\fBDem_DTCFormatType\fP)1"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_FORMAT_J1939\fP   (\fBDem_DTCFormatType\fP)2"
+.br
+.ti -1c
+.RI "#define \fBDEM_INIT_MONITOR_CLEAR\fP   (\fBDem_InitMonitorReasonType\fP)0x01"
+.br
+.ti -1c
+.RI "#define \fBDEM_INIT_MONITOR_RESTART\fP   (\fBDem_InitMonitorReasonType\fP)0x02"
+.br
+.ti -1c
+.RI "#define \fBDEM_INIT_MONITOR_REENABLED\fP   (\fBDem_InitMonitorReasonType\fP)0x03"
+.br
+.ti -1c
+.RI "#define \fBDEM_INIT_MONITOR_STORAGE_REENABLED\fP   (\fBDem_InitMonitorReasonType\fP)0x04"
+.br
+.ti -1c
+.RI "#define \fBDEM_UDS_STATUS_TF\fP   (\fBDem_UdsStatusByteType\fP)0x01"
+.br
+.ti -1c
+.RI "#define \fBDEM_UDS_STATUS_TFTOC\fP   (\fBDem_UdsStatusByteType\fP)0x02"
+.br
+.ti -1c
+.RI "#define \fBDEM_UDS_STATUS_PDTC\fP   (\fBDem_UdsStatusByteType\fP)0x04"
+.br
+.ti -1c
+.RI "#define \fBDEM_UDS_STATUS_CDTC\fP   (\fBDem_UdsStatusByteType\fP)0x08"
+.br
+.ti -1c
+.RI "#define \fBDEM_UDS_STATUS_TNCSLC\fP   (\fBDem_UdsStatusByteType\fP)0x10"
+.br
+.ti -1c
+.RI "#define \fBDEM_UDS_STATUS_TFSLC\fP   (\fBDem_UdsStatusByteType\fP)0x20"
+.br
+.ti -1c
+.RI "#define \fBDEM_UDS_STATUS_TNCTOC\fP   (\fBDem_UdsStatusByteType\fP)0x40"
+.br
+.ti -1c
+.RI "#define \fBDEM_UDS_STATUS_WIR\fP   (\fBDem_UdsStatusByteType\fP)0x80"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_ORIGIN_PRIMARY_MEMORY\fP   (\fBDem_DTCOriginType\fP)0x0001"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_ORIGIN_MIRROR_MEMORY\fP   (\fBDem_DTCOriginType\fP)0x0002"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_ORIGIN_PERMANENT_MEMORY\fP   (\fBDem_DTCOriginType\fP)0x0003"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_ORIGIN_OBD_RELEVANT_MEMORY\fP   (\fBDem_DTCOriginType\fP)0x0004"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_ORIGIN_USERDEFINED_MEMORY\fP   (\fBDem_DTCOriginType\fP)0x0005"
+.br
+.ti -1c
+.RI "#define \fBDEM_DTC_SELECTOR_NO_REQUEST\fP   0x00U"
+.br
+.RI "No DTC selection requested\&. "
+.ti -1c
+.RI "#define \fBDEM_DTC_SELECTOR_NOT_PROCESSED\fP   0x01U"
+.br
+.RI "DTC selection requested but not yet processed\&. "
+.ti -1c
+.RI "#define \fBDEM_DTC_SELECTOR_WRONG_DTC\fP   0x02U"
+.br
+.RI "No matching DTC in the requested format and origin found\&. "
+.ti -1c
+.RI "#define \fBDEM_DTC_SELECTOR_WRONG_DTC_ORIGIN\fP   0x03U"
+.br
+.RI "Requested DTC origin does not exist\&. "
+.ti -1c
+.RI "#define \fBDEM_DTC_SELECTOR_DTC_GROUP\fP   0x04U"
+.br
+.RI "DTC selection request is for a DTC group\&. "
+.ti -1c
+.RI "#define \fBDEM_DTC_SELECTOR_SINGLE_DTC_EVID_CACHED\fP   0x05U"
+.br
+.RI "Event matching the single DTC selection request found and cached\&. "
+.ti -1c
+.RI "#define \fBDEM_SELECTED_NONE\fP   0x00U"
+.br
+.RI "No DTC is selected\&. "
+.ti -1c
+.RI "#define \fBDEM_SELECTED_DTC\fP   0x01U"
+.br
+.RI "DTC selected\&. "
+.ti -1c
+.RI "#define \fBDEM_SELECTED_CHK_WRONG_DTC\fP   0x02U"
+.br
+.RI "Wrong DTC format\&. "
+.ti -1c
+.RI "#define \fBDEM_SELECTED_CHK_WRONG_ORIGIN\fP   0x03U"
+.br
+.RI "Wrong DTC Origin\&. "
+.ti -1c
+.RI "#define \fBDEM_SELECTED_CHK_OK\fP   0x04U"
+.br
+.RI "DTC selection check is successful\&. "
+.ti -1c
+.RI "#define \fBDEM_SELECTED_FFD\fP   0x05U"
+.br
+.RI "Freeze Frame Data selected\&. "
+.ti -1c
+.RI "#define \fBDEM_SELECTED_EDR\fP   0x06U"
+.br
+.RI "Extended Data Record selected\&. "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_EventStatusType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_DebounceResetStatusType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_DTCFormatType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint16\fP \fBDem_EventIdType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_InitMonitorReasonType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_MonitorDataType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_UdsStatusByteType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_DTCOriginType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_SelectorStatusType\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8\fP \fBDem_SelectionStatusType\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEM_DEBOUNCE_STATUS_FREEZE   (\fBDem_DebounceResetStatusType\fP)0x00"
+
+.SS "#define DEM_DEBOUNCE_STATUS_RESET   (\fBDem_DebounceResetStatusType\fP)0x01"
+
+.SS "#define DEM_DTC_FORMAT_J1939   (\fBDem_DTCFormatType\fP)2"
+
+.SS "#define DEM_DTC_FORMAT_OBD   (\fBDem_DTCFormatType\fP)0"
+
+.SS "#define DEM_DTC_FORMAT_UDS   (\fBDem_DTCFormatType\fP)1"
+
+.SS "#define DEM_DTC_ORIGIN_MIRROR_MEMORY   (\fBDem_DTCOriginType\fP)0x0002"
+
+.SS "#define DEM_DTC_ORIGIN_OBD_RELEVANT_MEMORY   (\fBDem_DTCOriginType\fP)0x0004"
+
+.SS "#define DEM_DTC_ORIGIN_PERMANENT_MEMORY   (\fBDem_DTCOriginType\fP)0x0003"
+
+.SS "#define DEM_DTC_ORIGIN_PRIMARY_MEMORY   (\fBDem_DTCOriginType\fP)0x0001"
+
+.SS "#define DEM_DTC_ORIGIN_USERDEFINED_MEMORY   (\fBDem_DTCOriginType\fP)0x0005"
+
+.SS "#define DEM_DTC_SELECTOR_DTC_GROUP   0x04U"
+
+.PP
+DTC selection request is for a DTC group\&. 
+.SS "#define DEM_DTC_SELECTOR_NO_REQUEST   0x00U"
+
+.PP
+No DTC selection requested\&. 
+.SS "#define DEM_DTC_SELECTOR_NOT_PROCESSED   0x01U"
+
+.PP
+DTC selection requested but not yet processed\&. 
+.SS "#define DEM_DTC_SELECTOR_SINGLE_DTC_EVID_CACHED   0x05U"
+
+.PP
+Event matching the single DTC selection request found and cached\&. 
+.SS "#define DEM_DTC_SELECTOR_WRONG_DTC   0x02U"
+
+.PP
+No matching DTC in the requested format and origin found\&. 
+.SS "#define DEM_DTC_SELECTOR_WRONG_DTC_ORIGIN   0x03U"
+
+.PP
+Requested DTC origin does not exist\&. 
+.SS "#define DEM_EVENT_STATUS_FAILED   (\fBDem_EventStatusType\fP)0x01U"
+
+.SS "#define DEM_EVENT_STATUS_FDC_THRESHOLD_REACHED   (\fBDem_EventStatusType\fP)0x04U"
+
+.SS "#define DEM_EVENT_STATUS_PASSED   (\fBDem_EventStatusType\fP)0x00U"
+
+.SS "#define DEM_EVENT_STATUS_PREFAILED   (\fBDem_EventStatusType\fP)0x03U"
+
+.SS "#define DEM_EVENT_STATUS_PREPASSED   (\fBDem_EventStatusType\fP)0x02U"
+
+.SS "#define DEM_INIT_MONITOR_CLEAR   (\fBDem_InitMonitorReasonType\fP)0x01"
+
+.SS "#define DEM_INIT_MONITOR_REENABLED   (\fBDem_InitMonitorReasonType\fP)0x03"
+
+.SS "#define DEM_INIT_MONITOR_RESTART   (\fBDem_InitMonitorReasonType\fP)0x02"
+
+.SS "#define DEM_INIT_MONITOR_STORAGE_REENABLED   (\fBDem_InitMonitorReasonType\fP)0x04"
+
+.SS "#define DEM_SELECTED_CHK_OK   0x04U"
+
+.PP
+DTC selection check is successful\&. 
+.SS "#define DEM_SELECTED_CHK_WRONG_DTC   0x02U"
+
+.PP
+Wrong DTC format\&. 
+.SS "#define DEM_SELECTED_CHK_WRONG_ORIGIN   0x03U"
+
+.PP
+Wrong DTC Origin\&. 
+.SS "#define DEM_SELECTED_DTC   0x01U"
+
+.PP
+DTC selected\&. 
+.SS "#define DEM_SELECTED_EDR   0x06U"
+
+.PP
+Extended Data Record selected\&. 
+.SS "#define DEM_SELECTED_FFD   0x05U"
+
+.PP
+Freeze Frame Data selected\&. 
+.SS "#define DEM_SELECTED_NONE   0x00U"
+
+.PP
+No DTC is selected\&. 
+.SS "#define DEM_UDS_STATUS_CDTC   (\fBDem_UdsStatusByteType\fP)0x08"
+confirmedDTC bit of the UDS status byte\&. Indicates whether a malfunction was detected enough times to warrant that the DTC is desired to be stored in long-term memory 
+.SS "#define DEM_UDS_STATUS_PDTC   (\fBDem_UdsStatusByteType\fP)0x04"
+pendingDTC bit of the UDS status byte\&. Indicates whether or not a diagnostic test has reported a testFailed result at any time during the current or last completed operation cycle 
+.SS "#define DEM_UDS_STATUS_TF   (\fBDem_UdsStatusByteType\fP)0x01"
+testFailed bit of the UDS status byte\&. Indicates the result of the most recently performed test 
+.SS "#define DEM_UDS_STATUS_TFSLC   (\fBDem_UdsStatusByteType\fP)0x20"
+testFailedSinceLastClear bit of the UDS status byte\&. Indicates whether a DTC test has completed with a failed result since the last time a call was made to ClearDiagnosticInformation\&. 
+.SS "#define DEM_UDS_STATUS_TFTOC   (\fBDem_UdsStatusByteType\fP)0x02"
+testFailedThisOperationCycle bit of the UDS status byte\&. Indicates whether or not a diagnostic test has reported a testFailed result at any time during the current operation cycle 
+.SS "#define DEM_UDS_STATUS_TNCSLC   (\fBDem_UdsStatusByteType\fP)0x10"
+testNotCompletedSinceLastClear bit of the UDS status byte\&. Indicates whether a DTC test has ever run and completed since the last time a call was made to ClearDiagnosticInformation 
+.SS "#define DEM_UDS_STATUS_TNCTOC   (\fBDem_UdsStatusByteType\fP)0x40"
+testNotCompletedThisOperationCycle bit of the UDS status byte\&. Indicates whether a DTC test has ever run and completed during the current operation cycle\&. 
+.SS "#define DEM_UDS_STATUS_WIR   (\fBDem_UdsStatusByteType\fP)0x80"
+warningIndicatorRequested bit of the UDS status byte\&. Report the status of any warning indicators associated with a particular DTC\&. 
+.SS "#define MAXNUNBEROFEVENTS   \fBDEMEVENTPARAMETER_SIZE\fP"
+
+.SS "#define Platform_Types"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBuint8\fP \fBDem_DebounceResetStatusType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_DTCFormatType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_DTCOriginType\fP"
+
+.SS "typedef \fBuint16\fP \fBDem_EventIdType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_EventStatusType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_InitMonitorReasonType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_MonitorDataType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_SelectionStatusType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_SelectorStatusType\fP"
+
+.SS "typedef \fBuint8\fP \fBDem_UdsStatusByteType\fP"
+----------UDS Bits--------------- 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DEM from the source code\&.

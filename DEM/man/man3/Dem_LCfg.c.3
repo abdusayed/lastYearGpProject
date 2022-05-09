@@ -1,0 +1,719 @@
+.TH "Dem_LCfg.c" 3 "Mon May 10 2021" "DEM" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Dem_LCfg.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Dem_LCfg\&.h'\fP
+.br
+\fC#include 'Dem_Types\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDEMEXTERNALSRDATAELEMENTCLASS_SIZE\fP   5"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTENDEDDATACLASS_SIZE\fP   5"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTENDEDDATARECORDCLASS_SIZE\fP   5"
+.br
+.ti -1c
+.RI "#define \fBDEMEXTERNALCSDATAELEMENTCLASS_SIZE\fP   5"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBDemClient_s\fP \fBDemClient\fP [\fBDEMCLIENT_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemCallbackDTCStatusChanged_s\fP \fBDemCallbackDTCStatusChanged\fP [\fBDEMCALLBACKDTCSTATUSCHANGED_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemExternalSRDataElementClass_s\fP \fBDemExternalSRDataElementClass\fP [\fBDEMEXTERNALSRDATAELEMENTCLASS_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemInternalDataElementClass_s\fP \fBDemInternalDataElementClass\fP [\fBDEMINTERNALDATAELEMENTCLASS_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemExternalCSDataElementClass_s\fP \fBDemExternalCSDataElementClass\fP [\fBDEMEXTERNALCSDATAELEMENTCLASS_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemDidClass_s\fP \fBDemDidClass\fP [\fBDEMDIDCLASS_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemGeneralOBD_s\fP \fBDemGeneralOBD\fP [\fBDEMGENERALOBD_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemCallbackOBDDTCStatusChanged_s\fP \fBDemCallbackOBDDTCStatusChanged\fP [\fBDEMCALLBACKOBDDTCSTATUSCHANGED_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemEnableCondition_s\fP \fBDemEnableCondition\fP [\fBDEMENABLECONDITION_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemEnableConditionGroup_s\fP \fBDemEnableConditionGroup\fP [\fBDEMENABLECONDITIONGROUP_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemEventMemorySet_s\fP \fBDemEventMemorySet\fP [\fBDEMEVENTMEMORYSET_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemClearDTCNotification_s\fP \fBDemClearDTCNotification\fP [\fBDEMCLEARDTCNOTIFICATION_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemIndicator_s\fP \fBDemIndicator\fP [\fBDEMINDICATOR_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemMirrorMemory_s\fP \fBDemMirrorMemory\fP [\fBDEMMIRRORMEMORY_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemPrimaryMemory_s\fP \fBDemPrimaryMemory\fP [\fBDEMPRIMARYMEMORY_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemUserDefinedMemory_s\fP \fBDemUserDefinedMemory\fP [\fBDEMUSERDEFINEDMEMORY_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemExtendedDataRecordClass_s\fP \fBDemExtendedDataRecordClass\fP [\fBDEMEXTENDEDDATARECORDCLASS_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemExtendedDataClass_s\fP \fBDemExtendedDataClass\fP [\fBDEMEXTENDEDDATACLASS_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemFreezeFrameClass_s\fP \fBDemFreezeFrameClass\fP [\fBDEMFREEZEFRAMECLASS_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemFreezeFrameRecordClass_s\fP \fBDemFreezeFrameRecordClass\fP [\fBDEMFREEZEFRAMERECORDCLASS_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemFreezeFrameRecNumClass_s\fP \fBDemFreezeFrameRecNumClass\fP [\fBDEMFREEZEFRAMERECNUMCLASS_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemGroupOfDTC_s\fP \fBDemGroupOfDTC\fP [\fBDEMGROUPOFDTC_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemNvRamBlockId_s\fP \fBDemNvRamBlockId\fP [\fBDEMNVRAMBLOCKID_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemOperationCycle_s\fP \fBDemOperationCycle\fP [\fBDEMOPERATIONCYCLE_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemRatio_s\fP \fBDemRatio\fP [\fBDEMRATIO_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemDebounceCounterBasedClass_s\fP \fBDemDebounceCounterBasedClass\fP [5]"
+.br
+.ti -1c
+.RI "\fBDemDebounceAlgorithmClass_s\fP \fBDemDebounceAlgorithmClass\fP [5]"
+.br
+.ti -1c
+.RI "\fBDemStorageCondition_s\fP \fBDemStorageCondition\fP [\fBDEMSTORAGECONDITION_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemStorageConditionGroup_s\fP \fBDemStorageConditionGroup\fP [\fBDEMSTORAGECONDITIONGROUP_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemComponent_s\fP \fBDemComponent\fP [\fBDEMCOMPONENT_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemDTCAttributes_s\fP \fBDemDTCAttributes\fP [\fBDEMDTCATTRIBUTES_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemObdDTC_s\fP \fBDemObdDTC\fP [\fBDEMOBDDTC_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemDTC_s\fP \fBDemDTC\fP [\fBDEMDTC_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemEventParameter_s\fP \fBDemEventParameter\fP [\fBDEMEVENTPARAMETER_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemMultiEventTriggering_s\fP \fBDemMultiEventTriggering\fP [\fBDEMMULTIEVENTTRIGGERING_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemPidClass_s\fP \fBDemPidClass\fP [\fBDEMPIDCLASS_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBDemDtr_s\fP \fBDemDtr\fP [\fBDEMDTR_SIZE\fP]"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEMEXTENDEDDATACLASS_SIZE   5"
+
+.SS "#define DEMEXTENDEDDATARECORDCLASS_SIZE   5"
+
+.SS "#define DEMEXTERNALCSDATAELEMENTCLASS_SIZE   5"
+
+.SS "#define DEMEXTERNALSRDATAELEMENTCLASS_SIZE   5"
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBDemCallbackDTCStatusChanged_s\fP DemCallbackDTCStatusChanged[\fBDEMCALLBACKDTCSTATUSCHANGED_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemCallbackDTCStatusChangedFnc = DEFAULT_PARAMETER_FUNCTION_NAME_VALUE
+    }
+}
+.fi
+.SS "\fBDemCallbackOBDDTCStatusChanged_s\fP DemCallbackOBDDTCStatusChanged[\fBDEMCALLBACKOBDDTCSTATUSCHANGED_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemCallbackDTCStatusChangedFnc = DEFAULT_PARAMETER_FUNCTION_NAME_VALUE
+    }
+}
+.fi
+.SS "\fBDemClearDTCNotification_s\fP DemClearDTCNotification[\fBDEMCLEARDTCNOTIFICATION_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemClearDtcNotificationFnc = DEFAULT_PARAMETER_FUNCTION_NAME_VALUE,
+        \&.DemClearDtcNotificationTime = DEFAULT_PARAMETER_ENUM_VALUE
+    }
+}
+.fi
+.SS "\fBDemClient_s\fP DemClient[\fBDEMCLIENT_SIZE\fP]"
+
+.SS "\fBDemComponent_s\fP DemComponent[\fBDEMCOMPONENT_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemComponentFailedCallbackFnc = DEFAULT_PARAMETER_FUNCTION_NAME_VALUE,
+        \&.DemComponentId = 0,
+        \&.DemComponentIgnoresPriority = TRUE,
+        \&.DemImmediateChildComponentRef_type = DEMCOMPONENT_REFERENCE_TYPE,
+        \&.DemImmediateChildComponentRef_ptr = &DemComponent[0],
+        \&.DemImmediateChildComponentRef_numberOfElements = 1
+    },
+    {
+        \&.DemComponentFailedCallbackFnc = DEFAULT_PARAMETER_FUNCTION_NAME_VALUE,
+        \&.DemComponentId = 0,
+        \&.DemComponentIgnoresPriority = TRUE,
+        \&.DemImmediateChildComponentRef_type = DEMCOMPONENT_REFERENCE_TYPE,
+        \&.DemImmediateChildComponentRef_ptr = &DemComponent[1],
+        \&.DemImmediateChildComponentRef_numberOfElements = 1
+    },
+    {
+        \&.DemComponentFailedCallbackFnc = DEFAULT_PARAMETER_FUNCTION_NAME_VALUE,
+        \&.DemComponentId = 0,
+        \&.DemComponentIgnoresPriority = TRUE,
+        \&.DemImmediateChildComponentRef_type = DEMCOMPONENT_REFERENCE_TYPE,
+        \&.DemImmediateChildComponentRef_ptr = &DemComponent[2],
+        \&.DemImmediateChildComponentRef_numberOfElements = 1
+    }
+}
+.fi
+.SS "\fBDemDebounceAlgorithmClass_s\fP DemDebounceAlgorithmClass[5]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+ {
+  \&.DebounceAlgorithm\&.DemDebounceCounterBasedClassRef_ptr = &DemDebounceCounterBasedClass ,
+ },
+
+}
+.fi
+.SS "\fBDemDebounceCounterBasedClass_s\fP DemDebounceCounterBasedClass[5]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+ {
+  \&.DemDebounceBehavior = DEM_DEBOUNCE_RESET   ,
+  \&.DemDebounceCounterDecrementStepSize = 1    ,
+  \&.DemDebounceCounterFailedThreshold   = 15   ,
+  \&.DemDebounceCounterIncrementStepSize = 2    ,
+  \&.DemDebounceCounterJumpDown          = FALSE ,
+  \&.DemDebounceCounterJumpUp            = FALSE ,
+  \&.DemDebounceCounterPassedThreshold   = -15   ,
+  \&.DemDebounceCounterStorage           = TRUE  ,
+ },
+}
+.fi
+.SS "\fBDemDidClass_s\fP DemDidClass[\fBDEMDIDCLASS_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+
+}
+.fi
+.SS "\fBDemDTC_s\fP DemDTC[\fBDEMDTC_SIZE\fP]"
+
+.SS "\fBDemDTCAttributes_s\fP DemDTCAttributes[\fBDEMDTCATTRIBUTES_SIZE\fP]"
+
+.SS "\fBDemDtr_s\fP DemDtr[\fBDEMDTR_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemDtrCompuDenominator0 = 0\&.00,
+        \&.DemDtrCompuNumerator0 = 0\&.00,
+        \&.DemDtrCompuNumerator1 = 0\&.00,
+        \&.DemDtrId = 0,
+        \&.DemDtrMid = 0,
+        \&.DemDtrTid = 0,
+        \&.DemDtrUasid = 0,
+        \&.DemDtrUpdateKind = DEFAULT_PARAMETER_ENUM_VALUE,
+        \&.DemDtrEventRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemDtrEventRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemDtrEventRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    }
+}
+.fi
+.SS "\fBDemEnableCondition_s\fP DemEnableCondition[\fBDEMENABLECONDITION_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemEnableConditionId = 0,
+        \&.DemEnableConditionStatus = TRUE
+    },
+    {
+        \&.DemEnableConditionId = 1,
+        \&.DemEnableConditionStatus = TRUE
+    },
+    {
+        \&.DemEnableConditionId = 3,
+        \&.DemEnableConditionStatus = TRUE
+    }
+}
+.fi
+.SS "\fBDemEnableConditionGroup_s\fP DemEnableConditionGroup[\fBDEMENABLECONDITIONGROUP_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemEnableConditionRef_type = DEMENABLECONDITION_REFERENCE_TYPE,
+        \&.DemEnableConditionRef_ptr = &DemEnableCondition[0],
+        \&.DemEnableConditionRef_numberOfElements = 1
+    },
+    {
+        \&.DemEnableConditionRef_type = DEMENABLECONDITION_REFERENCE_TYPE,
+        \&.DemEnableConditionRef_ptr = &DemEnableCondition[1],
+        \&.DemEnableConditionRef_numberOfElements = 1
+    },
+    {
+        \&.DemEnableConditionRef_type = DEMENABLECONDITION_REFERENCE_TYPE,
+        \&.DemEnableConditionRef_ptr = &DemEnableCondition[2],
+        \&.DemEnableConditionRef_numberOfElements = 1
+    }
+}
+.fi
+.SS "\fBDemEventMemorySet_s\fP DemEventMemorySet[\fBDEMEVENTMEMORYSET_SIZE\fP]"
+
+.SS "\fBDemEventParameter_s\fP DemEventParameter[\fBDEMEVENTPARAMETER_SIZE\fP]"
+\fBmain\&.c\fP 
+.SS "\fBDemExtendedDataClass_s\fP DemExtendedDataClass[\fBDEMEXTENDEDDATACLASS_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemExtendedDataRecordClassRef_type = DEMEXTENDEDDATARECORDCLASS_REFERENCE_TYPE,
+        \&.DemExtendedDataRecordClassRef_ptr = &DemExtendedDataRecordClass[0],
+        \&.DemExtendedDataRecordClassRef_numberOfElements = 1
+    },
+    {
+        \&.DemExtendedDataRecordClassRef_type = DEMEXTENDEDDATARECORDCLASS_REFERENCE_TYPE,
+        \&.DemExtendedDataRecordClassRef_ptr = &DemExtendedDataRecordClass[1],
+        \&.DemExtendedDataRecordClassRef_numberOfElements = 1
+    },
+    {
+        \&.DemExtendedDataRecordClassRef_type = DEMEXTENDEDDATARECORDCLASS_REFERENCE_TYPE,
+        \&.DemExtendedDataRecordClassRef_ptr = &DemExtendedDataRecordClass[2],
+        \&.DemExtendedDataRecordClassRef_numberOfElements = 1
+    }
+}
+.fi
+.SS "\fBDemExtendedDataRecordClass_s\fP DemExtendedDataRecordClass[\fBDEMEXTENDEDDATARECORDCLASS_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+
+}
+.fi
+.SS "\fBDemExternalCSDataElementClass_s\fP DemExternalCSDataElementClass[\fBDEMEXTERNALCSDATAELEMENTCLASS_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemDataElementDataSize = 3,
+        \&.DemDataElementReadFnc = DEFAULT_PARAMETER_FUNCTION_NAME_VALUE,
+        \&.DemDataElementUsePort = TRUE
+    }
+}
+.fi
+.SS "\fBDemExternalSRDataElementClass_s\fP DemExternalSRDataElementClass[\fBDEMEXTERNALSRDATAELEMENTCLASS_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemDataElementDataSize = 0,
+        \&.DemDataElementDataType = SINT16,
+        \&.DemDataElementEndianness = BIG_ENDIAN,
+        \&.DemDiagnosisScaling_type = DEMALTERNATIVEDATAINTERFACE_CONTAINER_TYPE,
+        \&.DemDiagnosisScaling_startingIndex = DEMALTERNATIVEDATAINTERFACE_0_STARTING_INDEX,
+        \&.DemDiagnosisScaling_numberOfInstances = DEMALTERNATIVEDATAINTERFACE_0_NUMBER_INSTANCES,
+        \&.DemSRDataElementClass_type = DEMDATAELEMENTINSTANCE_CONTAINER_TYPE,
+        \&.DemSRDataElementClass_startingIndex = DEMDATAELEMENTINSTANCE_0_STARTING_INDEX,
+        \&.DemSRDataElementClass_numberOfInstances = DEMDATAELEMENTINSTANCE_0_NUMBER_INSTANCES
+    }
+}
+.fi
+.SS "\fBDemFreezeFrameClass_s\fP DemFreezeFrameClass[\fBDEMFREEZEFRAMECLASS_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemDidClassRef_type = DEMDIDCLASS_REFERENCE_TYPE,
+        \&.DemDidClassRef_ptr = &DemDidClass[0],
+        \&.DemDidClassRef_numberOfElements = 1
+    },
+    {
+        \&.DemDidClassRef_type = DEMDIDCLASS_REFERENCE_TYPE,
+        \&.DemDidClassRef_ptr = &DemDidClass[1],
+        \&.DemDidClassRef_numberOfElements = 1
+    },
+    {
+        \&.DemDidClassRef_type = DEMDIDCLASS_REFERENCE_TYPE,
+        \&.DemDidClassRef_ptr = &DemDidClass[2],
+        \&.DemDidClassRef_numberOfElements = 1
+    }
+}
+.fi
+.SS "\fBDemFreezeFrameRecNumClass_s\fP DemFreezeFrameRecNumClass[\fBDEMFREEZEFRAMERECNUMCLASS_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemFreezeFrameRecordClassRef_type = DEMFREEZEFRAMERECORDCLASS_REFERENCE_TYPE,
+        \&.DemFreezeFrameRecordClassRef_ptr = &DemFreezeFrameRecordClass[0],
+        \&.DemFreezeFrameRecordClassRef_numberOfElements = 1
+    },
+    {
+        \&.DemFreezeFrameRecordClassRef_type = DEMFREEZEFRAMERECORDCLASS_REFERENCE_TYPE,
+        \&.DemFreezeFrameRecordClassRef_ptr = &DemFreezeFrameRecordClass[1],
+        \&.DemFreezeFrameRecordClassRef_numberOfElements = 1
+    },
+    {
+        \&.DemFreezeFrameRecordClassRef_type = DEMFREEZEFRAMERECORDCLASS_REFERENCE_TYPE,
+        \&.DemFreezeFrameRecordClassRef_ptr = &DemFreezeFrameRecordClass[2],
+        \&.DemFreezeFrameRecordClassRef_numberOfElements = 1
+    }
+}
+.fi
+.SS "\fBDemFreezeFrameRecordClass_s\fP DemFreezeFrameRecordClass[\fBDEMFREEZEFRAMERECORDCLASS_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemFreezeFrameRecordNumber = 0,
+        \&.DemFreezeFrameRecordTrigger = DEFAULT_PARAMETER_ENUM_VALUE,
+        \&.DemFreezeFrameRecordUpdate = DEFAULT_PARAMETER_ENUM_VALUE
+    },
+    {
+        \&.DemFreezeFrameRecordNumber = 0,
+        \&.DemFreezeFrameRecordTrigger = DEFAULT_PARAMETER_ENUM_VALUE,
+        \&.DemFreezeFrameRecordUpdate = DEFAULT_PARAMETER_ENUM_VALUE
+    },
+    {
+        \&.DemFreezeFrameRecordNumber = 0,
+        \&.DemFreezeFrameRecordTrigger = DEFAULT_PARAMETER_ENUM_VALUE,
+        \&.DemFreezeFrameRecordUpdate = DEFAULT_PARAMETER_ENUM_VALUE
+    }
+}
+.fi
+.SS "\fBDemGeneralOBD_s\fP DemGeneralOBD[\fBDEMGENERALOBD_SIZE\fP]"
+
+.SS "\fBDemGroupOfDTC_s\fP DemGroupOfDTC[\fBDEMGROUPOFDTC_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemGroupDTCs = 0
+    },
+    {
+        \&.DemGroupDTCs = 0
+    },
+    {
+        \&.DemGroupDTCs = 0
+    }
+}
+.fi
+.SS "\fBDemIndicator_s\fP DemIndicator[\fBDEMINDICATOR_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemIndicatorID = 0
+    }
+}
+.fi
+.SS "\fBDemInternalDataElementClass_s\fP DemInternalDataElementClass[\fBDEMINTERNALDATAELEMENTCLASS_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemDataElementDataSize = 0,
+        \&.DemInternalDataElement = DEM_AGINGCTR_DOWNCNT
+    }
+}
+.fi
+.SS "\fBDemMirrorMemory_s\fP DemMirrorMemory[\fBDEMMIRRORMEMORY_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemMaxNumberEventEntryMirror = 0
+    }
+}
+.fi
+.SS "\fBDemMultiEventTriggering_s\fP DemMultiEventTriggering[\fBDEMMULTIEVENTTRIGGERING_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemMultiEventTriggeringMasterEventRef_type = DEMEVENTPARAMETER_REFERENCE_TYPE,
+        \&.DemMultiEventTriggeringMasterEventRef_ptr = &DemEventParameter[0],
+        \&.DemMultiEventTriggeringMasterEventRef_numberOfElements = 1,
+        \&.DemMultiEventTriggeringSlaveEventRef_type = DEMEVENTPARAMETER_REFERENCE_TYPE,
+        \&.DemMultiEventTriggeringSlaveEventRef_ptr = &DemEventParameter[0],
+        \&.DemMultiEventTriggeringSlaveEventRef_numberOfElements = 1
+    },
+    {
+        \&.DemMultiEventTriggeringMasterEventRef_type = DEMEVENTPARAMETER_REFERENCE_TYPE,
+        \&.DemMultiEventTriggeringMasterEventRef_ptr = &DemEventParameter[0],
+        \&.DemMultiEventTriggeringMasterEventRef_numberOfElements = 1,
+        \&.DemMultiEventTriggeringSlaveEventRef_type = DEMEVENTPARAMETER_REFERENCE_TYPE,
+        \&.DemMultiEventTriggeringSlaveEventRef_ptr = &DemEventParameter[0],
+        \&.DemMultiEventTriggeringSlaveEventRef_numberOfElements = 1
+    },
+    {
+        \&.DemMultiEventTriggeringMasterEventRef_type = DEMEVENTPARAMETER_REFERENCE_TYPE,
+        \&.DemMultiEventTriggeringMasterEventRef_ptr = &DemEventParameter[0],
+        \&.DemMultiEventTriggeringMasterEventRef_numberOfElements = 1,
+        \&.DemMultiEventTriggeringSlaveEventRef_type = DEMEVENTPARAMETER_REFERENCE_TYPE,
+        \&.DemMultiEventTriggeringSlaveEventRef_ptr = &DemEventParameter[0],
+        \&.DemMultiEventTriggeringSlaveEventRef_numberOfElements = 1
+    }
+}
+.fi
+.SS "\fBDemNvRamBlockId_s\fP DemNvRamBlockId[\fBDEMNVRAMBLOCKID_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemNvRamBlockIdRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemNvRamBlockIdRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemNvRamBlockIdRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    },
+    {
+        \&.DemNvRamBlockIdRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemNvRamBlockIdRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemNvRamBlockIdRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    },
+    {
+        \&.DemNvRamBlockIdRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemNvRamBlockIdRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemNvRamBlockIdRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    }
+}
+.fi
+.SS "\fBDemObdDTC_s\fP DemObdDTC[\fBDEMOBDDTC_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemConsiderPtoStatus = TRUE,
+        \&.DemDtcValue = 3,
+        \&.DemEventOBDReadinessGroup = DEM_OBD_RDY_BOOSTPR,
+        \&.DemJ1939DTCValue = 0
+    }
+}
+.fi
+.SS "\fBDemOperationCycle_s\fP DemOperationCycle[\fBDEMOPERATIONCYCLE_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemOperationCycleAutostart = FALSE,
+        \&.DemOperationCycleId = 1,
+        \&.DemLeadingCycleRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemLeadingCycleRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemLeadingCycleRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    },
+    {
+        \&.DemOperationCycleAutostart = FALSE,
+        \&.DemOperationCycleId = 0,
+        \&.DemLeadingCycleRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemLeadingCycleRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemLeadingCycleRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    },
+    {
+        \&.DemOperationCycleAutostart = FALSE,
+        \&.DemOperationCycleId = 0,
+        \&.DemLeadingCycleRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemLeadingCycleRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemLeadingCycleRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    }
+}
+.fi
+.SS "\fBDemPidClass_s\fP DemPidClass[\fBDEMPIDCLASS_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemPidIdentifier = 2,
+        \&.DemPidDataElement_startingIndex = DEMPIDDATAELEMENT_0_STARTING_INDEX,
+        \&.DemPidDataElement_numberOfInstances = DEMPIDDATAELEMENT_0_NUMBER_INSTANCES
+    }
+}
+.fi
+.SS "\fBDemPrimaryMemory_s\fP DemPrimaryMemory[\fBDEMPRIMARYMEMORY_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemMaxNumberEventEntryPrimary = 6
+    },
+    {
+        \&.DemMaxNumberEventEntryPrimary = 3
+    },
+    {
+        \&.DemMaxNumberEventEntryPrimary = 3
+    }
+}
+.fi
+.SS "\fBDemRatio_s\fP DemRatio[\fBDEMRATIO_SIZE\fP]"
+
+.SS "\fBDemStorageCondition_s\fP DemStorageCondition[\fBDEMSTORAGECONDITION_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+
+        \&.DemStorageConditionId = 0,
+        \&.DemStorageConditionStatus = FALSE,
+        \&.DemStorageConditionReplacementEventRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemStorageConditionReplacementEventRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemStorageConditionReplacementEventRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    },
+    {
+        \&.DemStorageConditionId = 0,
+        \&.DemStorageConditionStatus = FALSE,
+        \&.DemStorageConditionReplacementEventRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemStorageConditionReplacementEventRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemStorageConditionReplacementEventRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    },
+    {
+        \&.DemStorageConditionId = 0,
+        \&.DemStorageConditionStatus = FALSE,
+        \&.DemStorageConditionReplacementEventRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemStorageConditionReplacementEventRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemStorageConditionReplacementEventRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    }
+}
+.fi
+.SS "\fBDemStorageConditionGroup_s\fP DemStorageConditionGroup[\fBDEMSTORAGECONDITIONGROUP_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemStorageConditionRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemStorageConditionRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemStorageConditionRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    },
+    {
+        \&.DemStorageConditionRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemStorageConditionRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemStorageConditionRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    },
+    {
+        \&.DemStorageConditionRef_type = DEFAULT_REFERENCE_TYPE,
+        \&.DemStorageConditionRef_ptr = DEFAULT_REFERENCE_VALUE,
+        \&.DemStorageConditionRef_numberOfElements = DEFAULT_REFERENCE_NUMBER_INSTANCES
+    }
+}
+.fi
+.SS "\fBDemUserDefinedMemory_s\fP DemUserDefinedMemory[\fBDEMUSERDEFINEDMEMORY_SIZE\fP]"
+\fBInitial value:\fP
+.PP
+.nf
+=
+{
+    {
+        \&.DemMaxNumberEventEntryUserDefined = 2,
+        \&.DemUserDefinedMemoryIdentifier = 3
+    }
+}
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DEM from the source code\&.

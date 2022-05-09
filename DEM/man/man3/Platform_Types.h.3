@@ -1,0 +1,229 @@
+.TH "Platform_Types.h" 3 "Mon May 10 2021" "DEM" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Platform_Types.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCPU_TYPE_8\fP   8"
+.br
+.RI "[SWS_Platform_00027] "
+.ti -1c
+.RI "#define \fBCPU_TYPE_16\fP   16"
+.br
+.ti -1c
+.RI "#define \fBCPU_TYPE_32\fP   32"
+.br
+.ti -1c
+.RI "#define \fBCPU_TYPE_64\fP   64"
+.br
+.ti -1c
+.RI "#define \fBMSB_FIRST\fP   0"
+.br
+.ti -1c
+.RI "#define \fBLSB_FIRST\fP   1"
+.br
+.ti -1c
+.RI "#define \fBHIGH_BYTE_FIRST\fP   0"
+.br
+.ti -1c
+.RI "#define \fBLOW_BYTE_FIRST\fP   1"
+.br
+.ti -1c
+.RI "#define \fBCPU_TYPE\fP   \fBCPU_TYPE_32\fP"
+.br
+.ti -1c
+.RI "#define \fBCPU_BIT_ORDER\fP   \fBMSB_FIRST\fP"
+.br
+.ti -1c
+.RI "#define \fBCPU_BYTE_ORDER\fP   \fBHIGH_BYTE_FIRST\fP"
+.br
+.ti -1c
+.RI "#define \fBNULL\fP   (void*)(0)"
+.br
+.ti -1c
+.RI "#define \fBFALSE\fP   (0U)"
+.br
+.RI "[SWS_Platform_00034] "
+.ti -1c
+.RI "#define \fBTRUE\fP   (1U)"
+.br
+.ti -1c
+.RI "#define \fBFalse\fP   (\fBboolean\fP)0"
+.br
+.ti -1c
+.RI "#define \fBTrue\fP   (\fBboolean\fP)1"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef signed char \fBsint8\fP"
+.br
+.ti -1c
+.RI "typedef unsigned char \fBuint8\fP"
+.br
+.ti -1c
+.RI "typedef signed short \fBsint16\fP"
+.br
+.ti -1c
+.RI "typedef unsigned short \fBuint16\fP"
+.br
+.ti -1c
+.RI "typedef signed long \fBsint32\fP"
+.br
+.ti -1c
+.RI "typedef unsigned long \fBuint32\fP"
+.br
+.ti -1c
+.RI "typedef signed long long \fBsint64\fP"
+.br
+.ti -1c
+.RI "typedef unsigned long long \fBuint64\fP"
+.br
+.ti -1c
+.RI "typedef unsigned long \fBuint8_least\fP"
+.br
+.ti -1c
+.RI "typedef unsigned long \fBuint16_least\fP"
+.br
+.ti -1c
+.RI "typedef unsigned long \fBuint32_least\fP"
+.br
+.ti -1c
+.RI "typedef signed long \fBsint8_least\fP"
+.br
+.ti -1c
+.RI "typedef signed long \fBsint16_least\fP"
+.br
+.ti -1c
+.RI "typedef signed long \fBsint32_least\fP"
+.br
+.ti -1c
+.RI "typedef float \fBfloat32\fP"
+.br
+.ti -1c
+.RI "typedef double \fBfloat64\fP"
+.br
+.ti -1c
+.RI "typedef volatile char \fBvint8_t\fP"
+.br
+.ti -1c
+.RI "typedef volatile \fBuint8\fP \fBvuint8_t\fP"
+.br
+.ti -1c
+.RI "typedef volatile \fBsint16\fP \fBvint16_t\fP"
+.br
+.ti -1c
+.RI "typedef volatile \fBuint16\fP \fBvuint16_t\fP"
+.br
+.ti -1c
+.RI "typedef volatile \fBsint32\fP \fBvint32_t\fP"
+.br
+.ti -1c
+.RI "typedef volatile \fBuint32\fP \fBvuint32_t\fP"
+.br
+.ti -1c
+.RI "typedef volatile \fBsint64\fP \fBvint64_t\fP"
+.br
+.ti -1c
+.RI "typedef volatile \fBuint64\fP \fBvuint64_t\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CPU_BIT_ORDER   \fBMSB_FIRST\fP"
+
+.SS "#define CPU_BYTE_ORDER   \fBHIGH_BYTE_FIRST\fP"
+
+.SS "#define CPU_TYPE   \fBCPU_TYPE_32\fP"
+
+.SS "#define CPU_TYPE_16   16"
+
+.SS "#define CPU_TYPE_32   32"
+
+.SS "#define CPU_TYPE_64   64"
+
+.SS "#define CPU_TYPE_8   8"
+
+.PP
+[SWS_Platform_00027] CPU Type & CPU_BIT_ORDER & CPU_BYTE_ORDER\&. 
+.SS "#define FALSE   (0U)"
+
+.PP
+[SWS_Platform_00034] Boolean data type\&. 
+.SS "#define False   (\fBboolean\fP)0"
+
+.SS "#define HIGH_BYTE_FIRST   0"
+
+.SS "#define LOW_BYTE_FIRST   1"
+
+.SS "#define LSB_FIRST   1"
+
+.SS "#define MSB_FIRST   0"
+
+.SS "#define NULL   (void*)(0)"
+
+.SS "#define TRUE   (1U)"
+
+.SS "#define True   (\fBboolean\fP)1"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef float \fBfloat32\fP"
+
+.SS "typedef double \fBfloat64\fP"
+
+.SS "typedef signed short \fBsint16\fP"
+
+.SS "typedef signed long \fBsint16_least\fP"
+
+.SS "typedef signed long \fBsint32\fP"
+
+.SS "typedef signed long \fBsint32_least\fP"
+
+.SS "typedef signed long long \fBsint64\fP"
+
+.SS "typedef signed char \fBsint8\fP"
+
+.SS "typedef signed long \fBsint8_least\fP"
+
+.SS "typedef unsigned short \fBuint16\fP"
+
+.SS "typedef unsigned long \fBuint16_least\fP"
+
+.SS "typedef unsigned long \fBuint32\fP"
+
+.SS "typedef unsigned long \fBuint32_least\fP"
+
+.SS "typedef unsigned long long \fBuint64\fP"
+
+.SS "typedef unsigned char \fBuint8\fP"
+
+.SS "typedef unsigned long \fBuint8_least\fP"
+
+.SS "typedef volatile \fBsint16\fP \fBvint16_t\fP"
+
+.SS "typedef volatile \fBsint32\fP \fBvint32_t\fP"
+
+.SS "typedef volatile \fBsint64\fP \fBvint64_t\fP"
+
+.SS "typedef volatile char \fBvint8_t\fP"
+
+.SS "typedef volatile \fBuint16\fP \fBvuint16_t\fP"
+
+.SS "typedef volatile \fBuint32\fP \fBvuint32_t\fP"
+
+.SS "typedef volatile \fBuint64\fP \fBvuint64_t\fP"
+
+.SS "typedef volatile \fBuint8\fP \fBvuint8_t\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DEM from the source code\&.

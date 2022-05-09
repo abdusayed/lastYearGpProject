@@ -1,0 +1,50 @@
+.TH "Dem_DTCInfoType" 3 "Mon May 10 2021" "DEM" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Dem_DTCInfoType
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Dem_Stc\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBuint32\fP \fBDTC\fP"
+.br
+.ti -1c
+.RI "\fBDem_EventIdType\fP \fBEventId\fP"
+.br
+.ti -1c
+.RI "\fBDem_DTCOriginType\fP \fBDTCOrigin\fP"
+.br
+.ti -1c
+.RI "\fBDem_DTCFormatType\fP \fBDTCFormat\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBRecordNumber\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBNextRecNum\fP"
+.br
+.in -1c
+.SH "Field Documentation"
+.PP 
+.SS "\fBuint32\fP DTC"
+Single DTC or DTC group 
+.SS "\fBDem_DTCFormatType\fP DTCFormat"
+Format of the DTC 
+.SS "\fBDem_DTCOriginType\fP DTCOrigin"
+Event memory of the DTC 
+.SS "\fBDem_EventIdType\fP EventId"
+Id of the first event, matching the DTC selection criteria 
+.SS "\fBuint8\fP NextRecNum"
+
+.SS "\fBuint8\fP RecordNumber"
+Record number selected to access event data 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DEM from the source code\&.

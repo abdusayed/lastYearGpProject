@@ -1,0 +1,240 @@
+.TH "DemEventParameter_Str" 3 "Mon May 10 2021" "DEM" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DemEventParameter_Str
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Dem_Types\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBfloat32\fP \fBDemCausalityDelayTime\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemComponentPriority\fP"
+.br
+.ti -1c
+.RI "\fBboolean\fP \fBDemEventAvailable\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemEventConfirmationThreshold\fP"
+.br
+.ti -1c
+.RI "\fBboolean\fP \fBDemEventFailureCycleCounterThresholdAdaptable\fP"
+.br
+.ti -1c
+.RI "\fBuint16\fP \fBDemEventId\fP"
+.br
+.ti -1c
+.RI "\fBDemEventKind_Enum\fP \fBDemEventKind\fP"
+.br
+.ti -1c
+.RI "\fBboolean\fP \fBDemEventRecoverableInSameOperationCycle\fP"
+.br
+.ti -1c
+.RI "\fBboolean\fP \fBDemFFPrestorageInNvm\fP"
+.br
+.ti -1c
+.RI "\fBboolean\fP \fBDemFFPrestorageSupported\fP"
+.br
+.ti -1c
+.RI "\fBDemReportBehavior_Enum\fP \fBDemReportBehavior\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemComponentClassRef_type\fP"
+.br
+.ti -1c
+.RI "\fBDemComponent_s\fP * \fBDemComponentClassRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemComponentClassRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemDTCRef_type\fP"
+.br
+.ti -1c
+.RI "\fBDemDTC_s\fP * \fBDemDTCRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemDTCRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemEnableConditionGroupRef_type\fP"
+.br
+.ti -1c
+.RI "\fBDemEnableConditionGroup_s\fP * \fBDemEnableConditionGroupRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemEnableConditionGroupRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemOBDGroupingAssociativeEventsRef_type\fP"
+.br
+.ti -1c
+.RI "struct \fBDemEventParameter_Str\fP * \fBDemOBDGroupingAssociativeEventsRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemOBDGroupingAssociativeEventsRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemOperationCycleRef_type\fP"
+.br
+.ti -1c
+.RI "\fBDemOperationCycle_s\fP * \fBDemOperationCycleRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemOperationCycleRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemStorageConditionGroupRef_type\fP"
+.br
+.ti -1c
+.RI "\fBDemStorageConditionGroup_s\fP * \fBDemStorageConditionGroupRef_ptr\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemStorageConditionGroupRef_numberOfElements\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemCallbackClearEventAllowed_startingIndex\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemCallbackClearEventAllowed_numberOfInstances\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemCallbackEventDataChanged_startingIndex\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemCallbackEventDataChanged_numberOfInstances\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemCallbackEventUdsStatusChanged_startingIndex\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemCallbackEventUdsStatusChanged_numberOfInstances\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemCallbackInitMForE_startingIndex\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemCallbackInitMForE_numberOfInstances\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemCallbackMonitorStatusChanged_startingIndex\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemCallbackMonitorStatusChanged_numberOfInstances\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemDebounceAlgorithmClass_type\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemDebounceAlgorithmClass_startingIndex\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemDebounceAlgorithmClass_numberOfInstances\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemIndicatorAttribute_startingIndex\fP"
+.br
+.ti -1c
+.RI "\fBuint8\fP \fBDemIndicatorAttribute_numberOfInstances\fP"
+.br
+.in -1c
+.SH "Field Documentation"
+.PP 
+.SS "\fBuint8\fP DemCallbackClearEventAllowed_numberOfInstances"
+
+.SS "\fBuint8\fP DemCallbackClearEventAllowed_startingIndex"
+
+.SS "\fBuint8\fP DemCallbackEventDataChanged_numberOfInstances"
+
+.SS "\fBuint8\fP DemCallbackEventDataChanged_startingIndex"
+
+.SS "\fBuint8\fP DemCallbackEventUdsStatusChanged_numberOfInstances"
+
+.SS "\fBuint8\fP DemCallbackEventUdsStatusChanged_startingIndex"
+
+.SS "\fBuint8\fP DemCallbackInitMForE_numberOfInstances"
+
+.SS "\fBuint8\fP DemCallbackInitMForE_startingIndex"
+
+.SS "\fBuint8\fP DemCallbackMonitorStatusChanged_numberOfInstances"
+
+.SS "\fBuint8\fP DemCallbackMonitorStatusChanged_startingIndex"
+
+.SS "\fBfloat32\fP DemCausalityDelayTime"
+
+.SS "\fBuint8\fP DemComponentClassRef_numberOfElements"
+
+.SS "\fBDemComponent_s\fP* DemComponentClassRef_ptr"
+
+.SS "\fBuint8\fP DemComponentClassRef_type"
+
+.SS "\fBuint8\fP DemComponentPriority"
+
+.SS "\fBuint8\fP DemDebounceAlgorithmClass_numberOfInstances"
+
+.SS "\fBuint8\fP DemDebounceAlgorithmClass_startingIndex"
+
+.SS "\fBuint8\fP DemDebounceAlgorithmClass_type"
+
+.SS "\fBuint8\fP DemDTCRef_numberOfElements"
+
+.SS "\fBDemDTC_s\fP* DemDTCRef_ptr"
+
+.SS "\fBuint8\fP DemDTCRef_type"
+
+.SS "\fBuint8\fP DemEnableConditionGroupRef_numberOfElements"
+
+.SS "\fBDemEnableConditionGroup_s\fP* DemEnableConditionGroupRef_ptr"
+
+.SS "\fBuint8\fP DemEnableConditionGroupRef_type"
+
+.SS "\fBboolean\fP DemEventAvailable"
+
+.SS "\fBuint8\fP DemEventConfirmationThreshold"
+
+.SS "\fBboolean\fP DemEventFailureCycleCounterThresholdAdaptable"
+
+.SS "\fBuint16\fP DemEventId"
+
+.SS "\fBDemEventKind_Enum\fP DemEventKind"
+
+.SS "\fBboolean\fP DemEventRecoverableInSameOperationCycle"
+
+.SS "\fBboolean\fP DemFFPrestorageInNvm"
+
+.SS "\fBboolean\fP DemFFPrestorageSupported"
+
+.SS "\fBuint8\fP DemIndicatorAttribute_numberOfInstances"
+
+.SS "\fBuint8\fP DemIndicatorAttribute_startingIndex"
+
+.SS "\fBuint8\fP DemOBDGroupingAssociativeEventsRef_numberOfElements"
+
+.SS "struct \fBDemEventParameter_Str\fP* DemOBDGroupingAssociativeEventsRef_ptr"
+
+.SS "\fBuint8\fP DemOBDGroupingAssociativeEventsRef_type"
+
+.SS "\fBuint8\fP DemOperationCycleRef_numberOfElements"
+
+.SS "\fBDemOperationCycle_s\fP* DemOperationCycleRef_ptr"
+
+.SS "\fBuint8\fP DemOperationCycleRef_type"
+
+.SS "\fBDemReportBehavior_Enum\fP DemReportBehavior"
+
+.SS "\fBuint8\fP DemStorageConditionGroupRef_numberOfElements"
+
+.SS "\fBDemStorageConditionGroup_s\fP* DemStorageConditionGroupRef_ptr"
+
+.SS "\fBuint8\fP DemStorageConditionGroupRef_type"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DEM from the source code\&.

@@ -1,0 +1,97 @@
+.TH "TestCases.h" 3 "Mon May 10 2021" "DEM" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TestCases.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBset_eventBeforPreinit\fP ()"
+.br
+.RI "\fBset_eventBeforPreinit\fP this test case set an event before calling the \fBDem_PreInit()\fP so it will return NOT_OK "
+.ti -1c
+.RI "void \fBset_eventBeforinitafterPreinit\fP ()"
+.br
+.RI "\fBset_eventBeforinitafterPreinit\fP this test case set an event after calling \fBDem_PreInit()\fP and before Dem_Init without make it's operation state to start so it will return NOT_OK "
+.ti -1c
+.RI "void \fBset_eventBeforinitafterPreinitAndStartOperation\fP ()"
+.br
+.RI "\fBset_eventBeforinitafterPreinitAndStartOperation\fP this test case set an event after calling \fBDem_PreInit()\fP , \fBDem_SetOperationCycleState()\fP and before Dem_Init save the event in the error buffer till \fBDem_Init()\fP be called "
+.ti -1c
+.RI "void \fBsetEventForUnavailableEvent\fP ()"
+.br
+.RI "\fBsetEventForUnavailableEvent\fP this test case set an event status after making this event to Unavailable so to will return NOT_OK "
+.ti -1c
+.RI "void \fBsetPrepassedStatusMoreThenThresholdValue\fP ()"
+.br
+.RI "\fBsetPrepassedStatusMoreThenThresholdValue\fP this test case set an event to \fBDEM_EVENT_STATUS_PREPASSED\fP number of time more then the threshold value of the passed status so it will make the event to passeds "
+.ti -1c
+.RI "void \fBsetPrepassedStatusThenGetTheCounter\fP ()"
+.br
+.RI "\fBsetPrepassedStatusThenGetTheCounter\fP this test case set an event status and then get the FaultDetectionCounter of that event by using functtion \fBDem_GetFaultDetectionCounter()\fP "
+.ti -1c
+.RI "void \fBGetSuppressionOfDtc\fP ()"
+.br
+.RI "\fBGetSuppressionOfDtc\fP this test case uses function Dem_SelectDTC then Dem_GetDTCSuppression to get the availability of the Dtc "
+.ti -1c
+.RI "void \fBGetSuppressionOfDtcWitoutSelectDtc\fP ()"
+.br
+.RI "\fBGetSuppressionOfDtcWitoutSelectDtc\fP this test case uses function Dem_GetDTCSuppression to get the availability of the Dtc without using Dem_SelectDTC first so it expected to return NOT_OK "
+.ti -1c
+.RI "void \fBGetStatusOfDTC\fP ()"
+.br
+.RI "\fBGetStatusOfDTC\fP this test case Reset the two events which belong to the same DTC and then Get the status for that DTC "
+.ti -1c
+.RI "void \fBGetDTCOfEvent\fP ()"
+.br
+.RI "\fBGetStatusOfDTC\fP this test case uses function Dem_GetDTCOfEvent to get the DTC number of the Two events 1 and 2 "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void GetDTCOfEvent ()"
+
+.PP
+\fBGetStatusOfDTC\fP this test case uses function Dem_GetDTCOfEvent to get the DTC number of the Two events 1 and 2 
+.SS "void GetStatusOfDTC ()"
+
+.PP
+\fBGetStatusOfDTC\fP this test case Reset the two events which belong to the same DTC and then Get the status for that DTC 
+.SS "void GetSuppressionOfDtc ()"
+
+.PP
+\fBGetSuppressionOfDtc\fP this test case uses function Dem_SelectDTC then Dem_GetDTCSuppression to get the availability of the Dtc 
+.SS "void GetSuppressionOfDtcWitoutSelectDtc ()"
+
+.PP
+\fBGetSuppressionOfDtcWitoutSelectDtc\fP this test case uses function Dem_GetDTCSuppression to get the availability of the Dtc without using Dem_SelectDTC first so it expected to return NOT_OK 
+.SS "void set_eventBeforinitafterPreinit ()"
+
+.PP
+\fBset_eventBeforinitafterPreinit\fP this test case set an event after calling \fBDem_PreInit()\fP and before Dem_Init without make it's operation state to start so it will return NOT_OK 
+.SS "void set_eventBeforinitafterPreinitAndStartOperation ()"
+
+.PP
+\fBset_eventBeforinitafterPreinitAndStartOperation\fP this test case set an event after calling \fBDem_PreInit()\fP , \fBDem_SetOperationCycleState()\fP and before Dem_Init save the event in the error buffer till \fBDem_Init()\fP be called 
+.SS "void set_eventBeforPreinit ()"
+
+.PP
+\fBset_eventBeforPreinit\fP this test case set an event before calling the \fBDem_PreInit()\fP so it will return NOT_OK 
+.SS "void setEventForUnavailableEvent ()"
+
+.PP
+\fBsetEventForUnavailableEvent\fP this test case set an event status after making this event to Unavailable so to will return NOT_OK 
+.SS "void setPrepassedStatusMoreThenThresholdValue ()"
+
+.PP
+\fBsetPrepassedStatusMoreThenThresholdValue\fP this test case set an event to \fBDEM_EVENT_STATUS_PREPASSED\fP number of time more then the threshold value of the passed status so it will make the event to passeds 
+.SS "void setPrepassedStatusThenGetTheCounter ()"
+
+.PP
+\fBsetPrepassedStatusThenGetTheCounter\fP this test case set an event status and then get the FaultDetectionCounter of that event by using functtion \fBDem_GetFaultDetectionCounter()\fP 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DEM from the source code\&.
